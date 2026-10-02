@@ -137,4 +137,71 @@ export const atelier27Config: SiteConfig = {
 };
 
 // Active config — swap this for each client
-export const siteConfig = atelier27Config;
+// export const siteConfig = atelier27Config;
+
+// ─────────────────────────────────────────────
+//  Shriram Industries — REAL CLIENT
+//  Kitchen hardware manufacturer, Indore
+// ─────────────────────────────────────────────
+export const shriramConfig: SiteConfig = {
+  businessName: 'Shriram Industries',
+  tagline: 'Engineering Smarter Kitchens Since 1991.',
+  description:
+    'Manufacturer of premium stainless steel kitchen baskets, telescopic channels, carousel units, pantry systems, and modular kitchen hardware. Based in Indore, Madhya Pradesh.',
+  industry: 'Kitchen Hardware Manufacturing',
+  isDemo: false,
+
+  theme: 'shriram',
+
+  colors: {
+    primary:    '#1a1d21',
+    secondary:  '#3a3d42',
+    accent:     '#F38524',
+    background: '#fafbfc',
+    foreground: '#1a1d21',
+    muted:      '#6b7280',
+    border:     '#e5e7eb',
+  },
+
+  fonts: {
+    sans:  'Outfit',
+    serif: 'DM Sans',
+  },
+
+  contact: {
+    phone:    '+91 80476 39215',
+    whatsapp: '+91 80476 39215',
+    email:    'shriramindustries@gmail.com',
+    address:  '24/1, Polo Ground Industrial Estate, Near Marimata Square',
+    city:     'Indore, Madhya Pradesh 452015',
+  },
+
+  social: {
+    instagram: 'https://instagram.com/shriramindustries',
+    facebook:  'https://facebook.com/shriramindustries',
+  },
+
+  seo: {
+    title:       'Shriram Industries — Premium Kitchen Hardware Manufacturer, Indore',
+    description: 'Leading manufacturer of SS304 kitchen baskets, telescopic channels, carousel units, tandem boxes & pantry systems. 30+ years of excellence from Indore, MP.',
+    keywords:    ['kitchen baskets', 'telescopic channel', 'modular kitchen hardware', 'stainless steel', 'Indore', 'carousel unit', 'pantry unit', 'manufacturer'],
+    ogImage:     '/images/products/kitchen-hero.jpg',
+    canonicalUrl: 'https://www.shriramindustriesind.com',
+  },
+
+  nav: [
+    { label: 'Products',  href: '/projects' },
+    { label: 'About',     href: '/about' },
+    { label: 'Services',  href: '/services' },
+    { label: 'Contact',   href: '/contact' },
+  ],
+
+  features: {
+    darkMode:          false,
+    threejs:           false,
+    gsapScrollTrigger: true,
+  },
+};
+
+// Active config — SHRIRAM INDUSTRIES
+export const siteConfig = shriramConfig;

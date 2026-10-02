@@ -9,10 +9,11 @@ import RootLayout from '@/layouts/RootLayout';
 import HomePage from '@/pages/HomePage';
 
 // Lazy-load remaining pages
-const AboutPage    = lazy(() => import('@/pages/AboutPage'));
-const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'));
-const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
-const ContactPage  = lazy(() => import('@/pages/ContactPage'));
+const AboutPage         = lazy(() => import('@/pages/AboutPage'));
+const ProjectsPage      = lazy(() => import('@/pages/ProjectsPage'));
+const ProductDetailPage = lazy(() => import('@/pages/ProductDetailPage'));
+const ServicesPage      = lazy(() => import('@/pages/ServicesPage'));
+const ContactPage       = lazy(() => import('@/pages/ContactPage'));
 
 // Loading fallback
 function PageLoader() {
@@ -49,6 +50,30 @@ export default function App() {
             element={
               <Suspense fallback={<PageLoader />}>
                 <ProjectsPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="projects/:id"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ProductDetailPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="products"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ProjectsPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="products/:id"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <ProductDetailPage />
               </Suspense>
             }
           />

@@ -68,7 +68,7 @@ export default function AboutSection({
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] mb-6">
-              Studio
+              Our Legacy
             </p>
             <h2
               id="about-heading"
@@ -86,14 +86,10 @@ export default function AboutSection({
             ) : (
               <>
                 <p className="text-[var(--color-muted)] leading-relaxed mb-5">
-                  Atelier 27 is an architecture and interior design practice working across
-                  residential and commercial projects in India. We have been in practice since 2016.
+                  Shriram Industries is a leading manufacturer of stainless steel modular kitchen baskets and hardware accessories, serving homeowners, interior architects, and hardware distributors across India.
                 </p>
                 <p className="text-[var(--color-muted)] leading-relaxed mb-8">
-                  We believe the best spaces are those that improve with time — that accumulate
-                  meaning as they are lived in rather than looking their best only in photographs.
-                  Our process is slow and collaborative, and we take on a small number of projects
-                  each year to ensure each one receives the attention it deserves.
+                  Engineered with certified SS 304 grade stainless steel and heavy-gauge wire, our products are built for smooth operation, effortless organization, and lifetime rust resistance.
                 </p>
               </>
             )}

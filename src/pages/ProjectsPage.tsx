@@ -1,29 +1,29 @@
 // ─────────────────────────────────────────────
-//  ProjectsPage — Atelier 27
+//  ProjectsPage — Shriram Industries (Products)
 // ─────────────────────────────────────────────
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '@/components/ui/SEO';
 import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import CTASection from '@/components/cta/CTASection';
-import { projects } from '@/data/atelier27';
+import { shriramProducts as products } from '@/data/shriram';
 import { siteConfig } from '@/config/site';
 import { staggerContainer, staggerItem, fadeUp } from '@/animations/motion/variants';
 
-const categories = ['All', ...Array.from(new Set(projects.map((p) => p.category)))];
+const categories = ['All', ...Array.from(new Set(products.map((p) => p.category)))];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filtered = activeCategory === 'All'
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
+    ? products
+    : products.filter((p) => p.category === activeCategory);
 
   return (
     <>
       <SEO
-        title="Projects — Atelier 27"
-        description="Selected architecture and interior design projects by Atelier 27 across India."
+        title={`Products — ${siteConfig.businessName}`}
+        description="Browse our complete range of SS304 kitchen baskets, telescopic channels, carousel units, tandem box systems, pantry units, and modular kitchen hardware."
         suffix={siteConfig.businessName}
       />
 
@@ -42,13 +42,13 @@ export default function ProjectsPage() {
               variants={fadeUp}
               className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] mb-4"
             >
-              Portfolio
+              Product Catalogue
             </motion.p>
             <motion.h1 variants={fadeUp} className="heading-xl text-[var(--color-foreground)]">
-              Selected Projects
+              Our Products
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[var(--color-muted)] mt-4 max-w-md leading-relaxed">
-              Residential and commercial design work across India since 2016.
+              40+ categories of premium kitchen hardware, manufactured in-house with SS304 & SS202 grade steel.
             </motion.p>
           </motion.div>
         </div>
@@ -56,7 +56,7 @@ export default function ProjectsPage() {
 
       {/* Filter */}
       <div className="container-ami py-8 border-b border-[var(--color-border)]">
-        <div className="flex items-center gap-1 flex-wrap" role="group" aria-label="Filter projects by category">
+        <div className="flex items-center gap-1 flex-wrap" role="group" aria-label="Filter products by category">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -96,15 +96,15 @@ export default function ProjectsPage() {
 
         {filtered.length === 0 && (
           <p className="text-[var(--color-muted)] text-center py-20">
-            No projects in this category yet.
+            No products in this category yet.
           </p>
         )}
       </div>
 
       <CTASection
-        headline="Have a project in mind?"
-        subline="We'd love to hear about what you're building."
-        primaryCta={{ label: 'Start a Conversation', href: '/contact' }}
+        headline="Need a bulk quote?"
+        subline="We offer competitive wholesale pricing for dealers, contractors, and interior designers."
+        primaryCta={{ label: 'Get a Quote', href: '/contact' }}
         dark={false}
       />
     </>

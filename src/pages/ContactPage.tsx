@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────
-//  ContactPage — Atelier 27
+//  ContactPage — Shriram Industries
 // ─────────────────────────────────────────────
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -52,8 +52,8 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact — Atelier 27"
-        description="Get in touch with Atelier 27 to discuss your architecture or interior design project."
+        title={`Contact — ${siteConfig.businessName}`}
+        description="Get in touch with Shriram Industries for product catalogues, bulk pricing, custom fabrication quotes, or kitchen hardware consultations."
         suffix={siteConfig.businessName}
       />
 
@@ -65,16 +65,16 @@ export default function ContactPage() {
               variants={fadeUp}
               className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] mb-4"
             >
-              Let's Talk
+              Get in Touch
             </motion.p>
             <motion.h1
               variants={fadeUp}
               className="heading-xl text-[var(--color-foreground)] max-w-2xl"
             >
-              Tell us about your project.
+              Let's upgrade your kitchen.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[var(--color-muted)] mt-4 max-w-md leading-relaxed">
-              We respond to every enquiry personally, usually within two working days.
+              86% response rate. We reply to every enquiry personally within one business day.
             </motion.p>
           </motion.div>
         </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <MapPin size={15} className="text-[var(--color-accent)] mt-0.5 shrink-0" aria-hidden="true" />
                     <div>
-                      <p className="text-label text-[0.6rem] text-[var(--color-muted)] tracking-[0.12em] mb-1">Studio</p>
+                      <p className="text-label text-[0.6rem] text-[var(--color-muted)] tracking-[0.12em] mb-1">Factory & Corporate Office</p>
                       <p className="text-[var(--color-foreground)] text-sm">
                         {contact.address}
                         {contact.city && <><br />{contact.city}</>}
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-9 h-9 border border-[var(--color-border)] flex items-center justify-center text-[var(--color-muted)] hover:text-[var(--color-foreground)] hover:border-[var(--color-foreground)] transition-all"
-                      aria-label="Atelier 27 on Instagram"
+                      aria-label={`${siteConfig.businessName} on Instagram`}
                     >
                       <InstagramIcon />
                     </a>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-9 h-9 border border-[var(--color-border)] flex items-center justify-center text-[var(--color-muted)] hover:text-[var(--color-foreground)] hover:border-[var(--color-foreground)] transition-all"
-                      aria-label="Atelier 27 on LinkedIn"
+                      aria-label={`${siteConfig.businessName} on LinkedIn`}
                     >
                       <LinkedinIcon />
                     </a>
@@ -194,14 +194,14 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="font-serif text-2xl font-light text-[var(--color-foreground)] mb-3">
-                    Message received.
+                    Enquiry received.
                   </h3>
                   <p className="text-[var(--color-muted)]">
-                    Thank you for reaching out. We'll respond within two working days.
+                    Thank you for reaching out to Shriram Industries. Our sales & technical team will respond within 24 hours.
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate aria-label="Project enquiry form">
+                <form onSubmit={handleSubmit} noValidate aria-label="Product enquiry and dealership form">
                   <div className="grid md:grid-cols-2 gap-5">
                     {/* Name */}
                     <div>
@@ -251,12 +251,13 @@ export default function ContactPage() {
                         htmlFor="contact-phone"
                         className="text-label text-[0.6rem] text-[var(--color-muted)] tracking-[0.12em] block mb-2"
                       >
-                        Phone / WhatsApp
+                        Phone / WhatsApp <span className="text-[var(--color-accent)]" aria-label="required">*</span>
                       </label>
                       <input
                         id="contact-phone"
                         name="phone"
                         type="tel"
+                        required
                         value={form.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-[var(--color-border)] bg-transparent text-[var(--color-foreground)] text-sm placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
@@ -265,13 +266,13 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    {/* Project type */}
+                    {/* Inquiry type */}
                     <div>
                       <label
                         htmlFor="contact-project-type"
                         className="text-label text-[0.6rem] text-[var(--color-muted)] tracking-[0.12em] block mb-2"
                       >
-                        Project Type
+                        Enquiry Nature
                       </label>
                       <select
                         id="contact-project-type"
@@ -280,13 +281,13 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-[var(--color-border)] bg-[var(--color-background)] text-[var(--color-foreground)] text-sm focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none"
                       >
-                        <option value="">Select a type</option>
-                        <option value="architecture">Architecture</option>
-                        <option value="interior-design">Interior Design</option>
-                        <option value="residential">Residential Design</option>
-                        <option value="commercial">Commercial Space</option>
-                        <option value="renovation">Renovation</option>
-                        <option value="consultation">Consultation</option>
+                        <option value="">Select enquiry type</option>
+                        <option value="dealership">Dealership / Distributorship</option>
+                        <option value="bulk-oem">OEM / Bulk Manufacturer Order</option>
+                        <option value="modular-kitchen">Modular Kitchen Baskets & Hardware</option>
+                        <option value="wardrobe">Wardrobe & Storage Systems</option>
+                        <option value="custom-ss">Custom Stainless Steel Fabrication</option>
+                        <option value="catalog">Catalogue & Sample Request</option>
                       </select>
                     </div>
                   </div>
@@ -297,7 +298,7 @@ export default function ContactPage() {
                       htmlFor="contact-message"
                       className="text-label text-[0.6rem] text-[var(--color-muted)] tracking-[0.12em] block mb-2"
                     >
-                      Tell us about your project <span className="text-[var(--color-accent)]" aria-label="required">*</span>
+                      Specifications or Requirements <span className="text-[var(--color-accent)]" aria-label="required">*</span>
                     </label>
                     <textarea
                       id="contact-message"
@@ -307,7 +308,7 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-[var(--color-border)] bg-transparent text-[var(--color-foreground)] text-sm placeholder:text-[var(--color-border)] focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none"
-                      placeholder="Describe your project, timeline, and any specific requirements..."
+                      placeholder="Specify product types, dimensions, SS grade (304 / 202), volume, delivery city, or custom fabrication details..."
                     />
                   </div>
 
@@ -318,7 +319,7 @@ export default function ContactPage() {
                       className="inline-flex items-center px-8 py-4 bg-[var(--color-foreground)] text-[var(--color-background)] text-label text-[0.65rem] hover:bg-[var(--color-accent)] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                       id="contact-submit"
                     >
-                      {status === 'submitting' ? 'Sending…' : 'Send Message'}
+                      {status === 'submitting' ? 'Submitting Enquiry…' : 'Send Enquiry'}
                     </button>
                   </div>
                 </form>

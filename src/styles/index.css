@@ -88,6 +88,22 @@
     --font-serif:           'Cormorant Garamond', 'Georgia', serif;
   }
 
+  /* ─── Shriram Industries Theme ─── */
+  [data-theme="shriram"] {
+    --color-primary:        #1a1d21;
+    --color-secondary:      #3a3d42;
+    --color-accent:         #F38524;
+    --color-accent-subtle:  rgba(243, 133, 36, 0.10);
+    --color-background:     #fafbfc;
+    --color-foreground:     #1a1d21;
+    --color-muted:          #6b7280;
+    --color-border:         #e5e7eb;
+    --color-card:           #ffffff;
+    --color-surface:        #f3f4f6;
+    --font-sans:            'Outfit', 'Inter', system-ui, sans-serif;
+    --font-serif:           'DM Sans', 'Inter', system-ui, sans-serif;
+  }
+
   /* ─── Base HTML Reset ─── */
   *, *::before, *::after {
     box-sizing: border-box;

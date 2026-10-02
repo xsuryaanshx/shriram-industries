@@ -1,20 +1,20 @@
 // ─────────────────────────────────────────────
-//  AboutPage — Atelier 27
+//  AboutPage — Shriram Industries
 // ─────────────────────────────────────────────
 import { motion } from 'framer-motion';
 import SEO from '@/components/ui/SEO';
 import StatsSection from '@/components/sections/StatsSection';
 import CTASection from '@/components/cta/CTASection';
 import { siteConfig } from '@/config/site';
-import { stats } from '@/data/atelier27';
+import { shriramStats as stats } from '@/data/shriram';
 import { staggerContainer, fadeUp, fadeLeft, fadeRight } from '@/animations/motion/variants';
 
 export default function AboutPage() {
   return (
     <>
       <SEO
-        title="About — Atelier 27"
-        description="Atelier 27 is an architecture and interior design studio based in Mumbai. Learn about our practice, philosophy, and approach."
+        title={`About — ${siteConfig.businessName}`}
+        description="Shriram Industries is a leading kitchen hardware manufacturer established in 1991 in Indore, Madhya Pradesh. 30+ years of SS304 kitchen baskets, telescopic channels & modular kitchen solutions."
         suffix={siteConfig.businessName}
       />
 
@@ -30,20 +30,20 @@ export default function AboutPage() {
               variants={fadeUp}
               className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] mb-4"
             >
-              Studio
+              Est. 1991 · Indore, MP
             </motion.p>
             <motion.h1
               variants={fadeUp}
               className="heading-xl text-[var(--color-foreground)] max-w-3xl"
             >
-              Architecture built on thoughtfulness.
+              Three decades of engineering smarter kitchens.
             </motion.h1>
           </motion.div>
         </div>
       </div>
 
       {/* Story section */}
-      <section className="section-padding" aria-labelledby="studio-story">
+      <section className="section-padding" aria-labelledby="company-story">
         <div className="container-ami">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 lg:gap-32 items-start">
             <motion.div
@@ -54,8 +54,8 @@ export default function AboutPage() {
             >
               <div className="aspect-[3/4] overflow-hidden bg-[var(--color-border)]">
                 <img
-                  src="/images/projects/oak-apartment.jpg"
-                  alt="Detail of oak joinery in the Oak Apartment project"
+                  src="/images/products/kitchen-basket.jpg"
+                  alt="Premium stainless steel kitchen basket by Shriram Industries"
                   className="img-cover"
                   loading="lazy"
                 />
@@ -69,39 +69,40 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
               className="pt-0 md:pt-12"
             >
-              <h2 id="studio-story" className="heading-md text-[var(--color-foreground)] mb-6">
-                Founded in 2016, based in Mumbai.
+              <h2 id="company-story" className="heading-md text-[var(--color-foreground)] mb-6">
+                Founded in 1991 by Mr. Jagdeep Jaiswal.
               </h2>
               <div className="w-10 h-px bg-[var(--color-accent)] mb-8" aria-hidden="true" />
 
               <div className="space-y-5 text-[var(--color-muted)] leading-relaxed">
                 <p>
-                  Atelier 27 was founded with a single idea: that good design is not decoration.
-                  It is the careful organisation of space, light, and material to support the
-                  lives of the people who use it.
+                  Shriram Industries was born in the heart of Indore's Polo Ground Industrial Estate
+                  with a clear mission: manufacture kitchen hardware that Indian families can trust
+                  for decades.
                 </p>
                 <p>
-                  We work across residential and commercial projects in India, always at a scale
-                  that allows genuine engagement with every decision. We take on a small number
-                  of projects each year for this reason.
+                  What started as a small stainless steel fabrication workshop has grown into one
+                  of Madhya Pradesh's most respected kitchen hardware manufacturing units — supplying
+                  modular kitchen dealers, interior designers, and contractors across the country.
                 </p>
                 <p>
-                  Our practice draws from Indian craft traditions, contemporary architectural
-                  thinking, and a consistent interest in the way materials age. The best spaces
-                  we have designed improve with time rather than deteriorate.
+                  We specialise in SS304 and SS202 grade stainless steel kitchen baskets, telescopic
+                  channels, carousel units, tandem box systems, pantry units, and a wide range of
+                  kitchen organisers. Every product is manufactured in-house with CNC bending,
+                  electro-polish finishing, and rigorous quality checks.
                 </p>
                 <p>
-                  We are a small team. Every project is personally led by the founding partners
-                  from first meeting to final detail.
+                  Our 86% response rate and 150+ five-star reviews speak to a culture that puts
+                  the customer first — from the first phone call to post-installation support.
                 </p>
               </div>
 
               {/* Values */}
               <div className="mt-12 space-y-6">
                 {[
-                  { label: 'Craft over spectacle', body: 'We are more interested in what a space feels like to inhabit than how it photographs.' },
-                  { label: 'Slow design', body: 'We resist the impulse to design quickly. Good spaces take time to understand.' },
-                  { label: 'Material honesty', body: 'We use materials for what they are, not what they can pretend to be.' },
+                  { label: 'SS304 Grade Promise', body: 'We use only genuine SS304 and SS202 grade stainless steel. No cheap substitutes, no shortcuts.' },
+                  { label: 'Made in India, Made to Last', body: '30+ years of manufacturing from our own Indore factory. Every basket, channel, and unit is built to endure daily Indian kitchen use.' },
+                  { label: 'Fair Pricing, Zero Compromise', body: 'We offer competitive wholesale and retail pricing without sacrificing build quality. Import-grade products at Indian pricing.' },
                 ].map((v) => (
                   <div key={v.label} className="border-l-2 border-[var(--color-accent)] pl-5">
                     <p className="font-medium text-[var(--color-foreground)] mb-1">{v.label}</p>
@@ -117,10 +118,10 @@ export default function AboutPage() {
       <StatsSection stats={stats} />
 
       <CTASection
-        headline="Let's work together."
-        subline="Tell us about your project. We'll listen carefully before we say anything at all."
-        primaryCta={{ label: 'Start a Project', href: '/contact' }}
-        secondaryCta={{ label: 'See Our Work', href: '/projects' }}
+        headline="Let's equip your kitchen."
+        subline="Whether you're a homeowner, dealer, or contractor — get in touch for product catalogues, bulk pricing, or a free consultation."
+        primaryCta={{ label: 'Get a Quote', href: '/contact' }}
+        secondaryCta={{ label: 'Browse Products', href: '/projects' }}
         dark
       />
     </>

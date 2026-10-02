@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────
-//  HomePage — Atelier 27
-//  DEMO CONCEPT — NOT AN ACTUAL CLIENT
+//  HomePage — Shriram Industries
+//  Kitchen Hardware Manufacturer, Indore
 // ─────────────────────────────────────────────
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -15,12 +15,18 @@ import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import CTASection from '@/components/cta/CTASection';
 import { ProjectCard, FeaturedProject } from '@/components/portfolio/ProjectCard';
 import { siteConfig } from '@/config/site';
-import { projects, services, processSteps, testimonials, stats } from '@/data/atelier27';
+import {
+  shriramProducts as products,
+  shriramServices as services,
+  shriramProcess as processSteps,
+  shriramTestimonials as testimonials,
+  shriramStats as stats,
+} from '@/data/shriram';
 import { staggerContainer, staggerItem, fadeUp } from '@/animations/motion/variants';
 
 
-const featuredProjects = projects.filter((p) => p.featured);
-const gridProjects = projects.filter((p) => !p.featured).slice(0, 3);
+const featuredProjects = products.filter((p) => p.featured);
+const gridProjects = products.filter((p) => !p.featured).slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -35,29 +41,29 @@ export default function HomePage() {
 
       {/* ── Hero ────────────────────────────────── */}
       <CinematicHero
-        label="Architecture & Interior Design"
+        label="Since 1991 · Indore, MP"
         headline={siteConfig.tagline}
-        subline="A design studio working at the intersection of architecture, interior design, and craft. Based in Mumbai."
-        primaryCta={{ label: 'Explore Projects', href: '/projects' }}
-        secondaryCta={{ label: 'Start a Project', href: '/contact' }}
-        imageSrc="/images/projects/courtyard-house.jpg"
-        imageAlt="The Courtyard House — Atelier 27 project in Ahmedabad"
-        scrollTarget="featured-projects"
+        subline="Manufacturer of premium stainless steel kitchen baskets, telescopic channels, carousel units, and modular kitchen hardware. Trusted by 5000+ customers across India."
+        primaryCta={{ label: 'Explore Products', href: '/projects' }}
+        secondaryCta={{ label: 'Get a Quote', href: '/contact' }}
+        imageSrc="/images/products/kitchen-hero.jpg"
+        imageAlt="Shriram Industries — Premium modular kitchen hardware"
+        scrollTarget="featured-products"
       />
 
       {/* ── Stats strip ─────────────────────────── */}
       <StatsSection stats={stats} />
 
-      {/* ── Featured Projects ────────────────────── */}
-      <section id="featured-projects" aria-labelledby="featured-heading">
+      {/* ── Featured Products ────────────────────── */}
+      <section id="featured-products" aria-labelledby="featured-heading">
         <div className="container-ami py-14 md:py-16">
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] mb-3">
-                Selected Work
+                Our Bestsellers
               </p>
               <h2 id="featured-heading" className="heading-lg text-[var(--color-foreground)]">
-                Recent Projects
+                Featured Products
               </h2>
             </div>
             <Link
@@ -65,7 +71,7 @@ export default function HomePage() {
               className="hidden md:inline-flex items-center gap-1.5 text-label text-[0.65rem] text-[var(--color-muted)] hover:text-[var(--color-foreground)] transition-colors group"
               id="view-all-projects"
             >
-              View all projects
+              View all products
               <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </Link>
           </div>
@@ -79,10 +85,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── More Projects Grid ───────────────────── */}
+      {/* ── More Products Grid ───────────────────── */}
       {gridProjects.length > 0 && (
-        <section className="container-ami py-14 md:py-16" aria-labelledby="more-projects-heading">
-          <h2 id="more-projects-heading" className="sr-only">More Projects</h2>
+        <section className="container-ami py-14 md:py-16" aria-labelledby="more-products-heading">
+          <h2 id="more-products-heading" className="sr-only">More Products</h2>
           <motion.ul
             variants={staggerContainer(0.1)}
             initial="hidden"
@@ -109,7 +115,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-8 py-3.5 border border-[var(--color-foreground)] text-label text-[0.65rem] text-[var(--color-foreground)] hover:bg-[var(--color-foreground)] hover:text-[var(--color-background)] transition-all duration-300"
               id="view-all-bottom"
             >
-              View All Projects
+              View All Products
             </Link>
           </motion.div>
         </section>
@@ -117,34 +123,36 @@ export default function HomePage() {
 
       {/* ── About ────────────────────────────────── */}
       <AboutSection
-        cta={{ label: 'About the Studio', href: '/about' }}
-        imageSrc="/images/projects/aria-residence.jpg"
-        imageAlt="Atelier 27 design approach — interior of the Aria Residence"
+        title="Engineering Kitchen Excellence Since 1991"
+        body="Shriram Industries is Central India's premier manufacturer of high-grade SS 304 modular kitchen baskets, wardrobe storage systems, and specialized hardware. Founded in Indore, we combine precision tooling, electro-polish finishing, and decades of engineering craft to deliver modular fittings built to endure generations of daily use."
+        cta={{ label: 'About Shriram Industries', href: '/about' }}
+        imageSrc="/images/products/carousel-unit.jpg"
+        imageAlt="Shriram Industries — Corner carousel unit in premium kitchen"
       />
 
       {/* ── Services ─────────────────────────────── */}
       <ServicesSection
         services={services}
-        title="Our Disciplines"
-        subtitle="We work across architecture, interiors, and spatial design — always with an emphasis on craft and longevity."
+        title="What We Offer"
+        subtitle="From individual kitchen baskets to complete modular kitchen hardware supply chains — we've got your kitchen covered."
       />
 
       {/* ── Process ──────────────────────────────── */}
       <ProcessSection
         steps={processSteps}
         title="How We Work"
-        subtitle="Design is a process before it is a result."
+        subtitle="From consultation to installation — a seamless experience."
       />
 
-      {/* ── Testimonials ─────────────────────────── */}
+      {/* ── Testimonials (Google Reviews) ──────────── */}
       <TestimonialsSection testimonials={testimonials} />
 
       {/* ── Final CTA ────────────────────────────── */}
       <CTASection
-        headline="Let's create a space worth remembering."
-        subline="We work with a small number of clients each year. If you have a project in mind, we'd like to hear about it."
-        primaryCta={{ label: 'Start a Project', href: '/contact' }}
-        secondaryCta={{ label: 'Explore Our Work', href: '/projects' }}
+        headline="Ready to upgrade your kitchen?"
+        subline="Get in touch for product catalogues, bulk pricing, or a free kitchen hardware consultation. We serve dealers, contractors, and homeowners across India."
+        primaryCta={{ label: 'Get a Quote', href: '/contact' }}
+        secondaryCta={{ label: 'Browse Products', href: '/projects' }}
         dark
       />
     </>
