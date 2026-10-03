@@ -6,8 +6,8 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // For GitHub Pages: set VITE_BASE_PATH to /repo-name/ in your CI
-  base: process.env.VITE_BASE_PATH || '/',
+  // For GitHub Pages: defaults to /shriram-industries/ in production
+  base: process.env.VITE_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/shriram-industries/' : '/'),
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),

@@ -6,6 +6,7 @@ import SEO from '@/components/ui/SEO';
 import StatsSection from '@/components/sections/StatsSection';
 import CTASection from '@/components/cta/CTASection';
 import { siteConfig } from '@/config/site';
+import { imagePath } from '@/lib/utils';
 import { shriramStats as stats } from '@/data/shriram';
 import { staggerContainer, fadeUp, fadeLeft, fadeRight } from '@/animations/motion/variants';
 
@@ -54,7 +55,7 @@ export default function AboutPage() {
             >
               <div className="aspect-[3/4] overflow-hidden bg-[var(--color-border)]">
                 <img
-                  src="/images/products/kitchen-basket.jpg"
+                  src={imagePath('/images/products/kitchen-basket.jpg')}
                   alt="Premium stainless steel kitchen basket by Shriram Industries"
                   className="img-cover"
                   loading="lazy"

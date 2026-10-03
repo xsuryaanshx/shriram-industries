@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, imagePath } from '@/lib/utils';
 import type { Project } from '@/config/types';
 
 interface ProjectCardProps {
@@ -28,7 +28,7 @@ export function ProjectCard({ project, className, priority = false }: ProjectCar
       {/* Image */}
       <div className="relative overflow-hidden aspect-[4/3]">
         <motion.img
-          src={project.image}
+          src={imagePath(project.image)}
           alt={`${project.title}, ${project.location}`}
           className="img-cover"
           loading={priority ? 'eager' : 'lazy'}
@@ -112,7 +112,7 @@ export function FeaturedProject({ project, index }: FeaturedProjectProps) {
         aria-hidden="true"
       >
         <motion.img
-          src={project.image}
+          src={imagePath(project.image)}
           alt={`${project.title}`}
           className="img-cover"
           loading="lazy"

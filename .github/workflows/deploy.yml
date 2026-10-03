@@ -35,8 +35,7 @@ jobs:
         run: npm run build
         env:
           # Set VITE_BASE_PATH to /your-repo-name/ for GitHub Pages
-          # e.g., VITE_BASE_PATH: /ami-website-factory/
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/' }}
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || '/shriram-industries/' }}
 
       - name: Copy index.html to 404.html for SPA routing
         run: cp dist/index.html dist/404.html

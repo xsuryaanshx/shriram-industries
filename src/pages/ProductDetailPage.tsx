@@ -9,6 +9,7 @@ import SEO from '@/components/ui/SEO';
 import CTASection from '@/components/cta/CTASection';
 import { shriramProducts } from '@/data/shriram';
 import { siteConfig } from '@/config/site';
+import { imagePath } from '@/lib/utils';
 import { fadeLeft, fadeRight } from '@/animations/motion/variants';
 
 // Product-specific technical specifications map
@@ -219,7 +220,7 @@ export default function ProductDetailPage() {
               <div className="relative overflow-hidden aspect-[4/3] bg-zinc-900 border border-[var(--color-border)] shadow-md">
                 {product.image ? (
                   <img
-                    src={product.image}
+                    src={imagePath(product.image)}
                     alt={product.title}
                     className="w-full h-full object-cover"
                   />
@@ -406,7 +407,7 @@ export default function ProductDetailPage() {
             >
               <div className="aspect-[4/3] bg-zinc-800 overflow-hidden mb-4 relative">
                 {rel.image ? (
-                  <img src={rel.image} alt={rel.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={imagePath(rel.image)} alt={rel.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-zinc-400 text-xs uppercase tracking-wider">
                     SS 304 Fitting

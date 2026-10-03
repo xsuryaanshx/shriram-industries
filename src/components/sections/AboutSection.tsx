@@ -4,7 +4,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, imagePath } from '@/lib/utils';
 import { fadeLeft, fadeRight, fadeUp } from '@/animations/motion/variants';
 
 interface AboutSectionProps {
@@ -41,7 +41,7 @@ export default function AboutSection({
           >
             <div className="aspect-[3/4] overflow-hidden">
               {imageSrc ? (
-                <img src={imageSrc} alt={imageAlt} className="img-cover" loading="lazy" />
+                <img src={imagePath(imageSrc)} alt={imageAlt} className="img-cover" loading="lazy" />
               ) : (
                 <div
                   className="w-full h-full"

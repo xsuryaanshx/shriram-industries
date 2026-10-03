@@ -45,3 +45,9 @@ Thumbs.db
 
 # Misc
 *.local
+
+# Other project directories & experiments
+jain-gaming-centre/
+Controller/
+public/Controller/
+src/components/ControllerScrollSequence.tsx

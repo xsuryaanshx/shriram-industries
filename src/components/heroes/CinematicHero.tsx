@@ -6,7 +6,7 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, imagePath } from '@/lib/utils';
 import { fadeUp, fadeIn, staggerContainer } from '@/animations/motion/variants';
 import { useReducedMotion } from '@/hooks';
 
@@ -69,7 +69,7 @@ export default function CinematicHero({
       <div ref={imgRef} className="absolute inset-0 will-change-transform">
         {imageSrc ? (
           <img
-            src={imageSrc}
+            src={imagePath(imageSrc)}
             alt={imageAlt}
             className="img-cover"
             loading="eager"
