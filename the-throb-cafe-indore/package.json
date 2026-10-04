@@ -1,0 +1,20 @@
+{
+  "name": "the-throb-cafe-indore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Throb Cafe - Indore's Ultimate Chill Zone. Vibe, Sip, Connect. Cozy corners, craveable food, date setups, and aesthetic hangout.",
+  "scripts": {
+    "dev": "npx serve . -p 8089",
+    "start": "npx serve . -p 8089"
+  },
+  "keywords": [
+    "the-throb-cafe",
+    "indore-cafe",
+    "chill-zone",
+    "date-cafe-indore",
+    "birthday-cafe-indore",
+    "best-cafe-in-indore"
+  ],
+  "author": "Antigravity Creative Studio",
+  "license": "MIT"
+}

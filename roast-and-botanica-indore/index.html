@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="roast">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>ROAST & BOTANICA · Specialty Coffee Roastery, Sourdough Bakehouse & Greenhouse Cafe · Indore</title>
+  <meta name="title" content="ROAST & BOTANICA · Specialty Coffee Roastery & Greenhouse Cafe · Indore" />
+  <meta name="description" content="Central India's premier third-wave coffee micro-roastery and botanical conservatory in Scheme 54, Vijay Nagar, Indore. Single-estate coffees, 48-hour slow-ferment sourdough, and French-Malwa artisanal brunch." />
+  <meta name="keywords" content="Indore cafe, best cafe in Indore, specialty coffee Indore, Vijay Nagar cafe, third wave roastery Indore, sourdough bakery Indore, pet friendly cafe Indore, Jain food cafe Indore" />
+  <meta name="author" content="Roast & Botanica Roasters" />
+  <meta name="theme-color" content="#120f0d" />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:url" content="https://roastbotanicaindore.com/" />
+  <meta property="og:title" content="ROAST & BOTANICA · Specialty Coffee Roastery & Greenhouse Cafe · Indore" />
+  <meta property="og:description" content="Handcrafted single-origin roasts, 48h wild-ferment sourdough, and glasshouse botanical sanctuary in Vijay Nagar, Indore." />
+  <meta property="og:image" content="assets/images/cafe-interior.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="ROAST & BOTANICA · Specialty Coffee Roastery · Indore" />
+  <meta property="twitter:description" content="Third-wave micro-roastery and sunlit greenhouse cafe in Scheme 54, Vijay Nagar, Indore." />
+  <meta property="twitter:image" content="assets/images/cafe-interior.jpg" />
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Roast & Botanica Specialty Roasters",
+    "image": "assets/images/cafe-interior.jpg",
+    "@id": "https://roastbotanicaindore.com",
+    "url": "https://roastbotanicaindore.com",
+    "telephone": "+919826078690",
+    "priceRange": "₹₹",
+    "menu": "https://roastbotanicaindore.com/#menu",
+    "servesCuisine": ["Specialty Coffee", "Artisanal Sourdough", "French Bakery", "Continental", "Jain Friendly"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot 14-B, PU-4 Commercial, Behind C21 Mall, Scheme 54",
+      "addressLocality": "Indore",
+      "addressRegion": "Madhya Pradesh",
+      "postalCode": "452010",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 22.7533,
+      "longitude": 75.8937
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "23:30"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Audio Indicator / Quick Top Status Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-bar-content">
+      <div class="live-telemetry">
+        <span class="live-pulse-dot" aria-hidden="true"></span>
+        <span class="telemetry-label">IN THE ROASTER TODAY:</span>
+        <span class="telemetry-value" id="live-roaster-bean">Ratnagiri Estate Honey Process (Batch #142 · 204°C)</span>
+      </div>
+
+      <div class="top-controls">
+        <button class="audio-toggle-btn" id="audio-toggle" aria-label="Toggle cafe ambient soundscape">
+          <svg class="audio-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path class="audio-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path class="audio-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <span id="audio-label">Atmosphere: Off</span>
+        </button>
+
+        <div class="theme-switch-wrapper">
+          <button class="theme-toggle-btn" id="theme-toggle" aria-label="Switch between Espresso Dark and Oat Crema Light theme">
+            <span class="theme-icon sun-icon">☀️ Crema</span>
+            <span class="theme-icon moon-icon">☕ Roast</span>
+          </button>
+        </div>
+
+        <span class="indore-tag">📍 Scheme 54, Vijay Nagar, Indore</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="#home" class="brand-identity" aria-label="Roast and Botanica Home">
+        <div class="brand-monogram">
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="19" stroke="var(--accent-amber)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M14 12C16.5 12 18 13.2 18 15.5C18 17.5 16.5 18.8 14 18.8H12V12H14ZM12 21H14.5L18.5 28H15.5L12.5 22.5H12V28H9.5V12H14C17.8 12 20.2 14 20.2 16.8C20.2 18.8 19 20.4 17 21.2L21 28H18L14 21Z" fill="var(--accent-amber)"/>
+            <path d="M24 16C26 16 27.5 17 27.5 19C27.5 20.5 26.5 21.5 25 21.8C27 22.2 28.2 23.5 28.2 25.2C28.2 27.2 26.5 28.5 24 28.5H21.5V16H24ZM23.8 21.2C25 21.2 25.8 20.5 25.8 19.4C25.8 18.3 25 17.6 23.8 17.6H23V21.2H23.8ZM24.2 26.8C25.5 26.8 26.5 26 26.5 24.8C26.5 23.6 25.5 22.8 24.2 22.8H23V26.8H24.2Z" fill="var(--text-secondary)"/>
+          </svg>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">ROAST & BOTANICA</span>
+          <span class="brand-tagline">MICRO-ROASTERY · ATRIUM BISTRO · INDORE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-navigation" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">Our Terroir</a>
+        <a href="#menu" class="nav-link">Sensory Menu</a>
+        <a href="#quiz" class="nav-link">Flavor Quiz</a>
+        <a href="#brew-guide" class="nav-link">Brew Bar</a>
+        <a href="#spaces" class="nav-link">Conservatory</a>
+        <a href="#location" class="nav-link">Visit</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-action-group">
+        <button class="tasting-tray-btn" id="open-tray-btn" aria-label="Open your tasting tray cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="tray-text">Tasting Tray</span>
+          <span class="tray-counter" id="tray-count-badge">0</span>
+        </button>
+
+        <a href="#reserve" class="btn btn-primary btn-sm reserve-nav-cta">
+          <span>Reserve Table</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-links">
+          <a href="#about" class="mobile-link">Our Terroir & Roastery</a>
+          <a href="#menu" class="mobile-link">Sensory Tasting Menu</a>
+          <a href="#quiz" class="mobile-link">Find Your Perfect Cup</a>
+          <a href="#brew-guide" class="mobile-link">Extraction Timer & Guide</a>
+          <a href="#spaces" class="mobile-link">The Conservatory Spaces</a>
+          <a href="#reserve" class="mobile-link">Reserve a Table</a>
+          <a href="#location" class="mobile-link">Location & Travel Time</a>
+        </div>
+        <div class="mobile-drawer-footer">
+          <div class="mobile-hours">Open Daily: 8:00 AM – 11:30 PM</div>
+          <a href="tel:+919826078690" class="mobile-phone-link">+91 98260 78690</a>
+          <a href="#reserve" class="btn btn-primary btn-block">Book Experience</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Landmark Content -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        
+        <!-- Left: Hero Editorial Headline & CTAs -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">☕</span>
+            <span class="badge-text">CENTRAL INDIA’S FIRST SYNESSO MVP HYDRA BAR</span>
+          </div>
+
+          <h1 class="hero-heading">
+            Indore’s Sanctuary for <br />
+            <span class="serif-highlight">Specialty Coffee</span> & Slow Living.
+          </h1>
+
+          <p class="hero-subhead">
+            Born out of love for single-estate Indian beans and European slow-ferment baking. We roast in micro-batches under a sun-drenched botanical atrium in Scheme 54, crafting slow mornings, quiet deep work, and spirited evening jazz.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="hero-cta-cluster">
+            <a href="#menu" class="btn btn-primary btn-lg">
+              <span>Explore Sensory Menu</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#reserve" class="btn btn-secondary btn-lg">
+              <span>Book a Table</span>
+            </a>
+            <a href="#quiz" class="quiz-pill-cta">
+              <span class="pulse-mini"></span>
+              <span>Find My Brew Quiz (60s)</span>
+            </a>
+          </div>
+
+          <!-- Micro Metric Highlights -->
+          <div class="hero-metrics-strip">
+            <div class="metric-card">
+              <span class="metric-num">88.5+</span>
+              <span class="metric-caption">SCA Cup Score Certified</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-num">48-Hour</span>
+              <span class="metric-caption">Cold Ferment Sourdough</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-num">4.9 ★</span>
+              <span class="metric-caption">Indore Foodie Score (1,840+)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Architectural Conservatory Showcase Card -->
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img 
+              src="assets/images/cafe-interior.jpg" 
+              alt="Sunlit botanical greenhouse atrium at Roast and Botanica Cafe, Vijay Nagar, Indore" 
+              class="hero-img"
+              loading="eager"
+            />
+            <div class="hero-img-overlay"></div>
+
+            <!-- Floating Interactive Hotspots -->
+            <div class="image-hotspot hotspot-barista" style="top: 55%; left: 42%;">
+              <div class="hotspot-pulse"></div>
+              <div class="hotspot-tooltip">
+                <strong>Synesso MVP Hydra</strong>
+                <span>Pressure-profiled extraction at 93.5°C</span>
+              </div>
+            </div>
+
+            <div class="image-hotspot hotspot-roaster" style="top: 48%; left: 75%;">
+              <div class="hotspot-pulse"></div>
+              <div class="hotspot-tooltip">
+                <strong>In-House Micro-Roaster</strong>
+                <span>Direct farm shade-grown lots roasted daily</span>
+              </div>
+            </div>
+
+            <!-- Floating Live Status Floating Chip -->
+            <div class="hero-floating-card">
+              <div class="floating-header">
+                <span class="live-dot-green"></span>
+                <span class="floating-title">CAFE SANCTUARY STATUS</span>
+              </div>
+              <div class="floating-body">
+                <div class="floating-row">
+                  <span class="row-label">Current Mood</span>
+                  <span class="row-val">Warm Sunlight & Acoustic Soul</span>
+                </div>
+                <div class="floating-row">
+                  <span class="row-label">Atrium Table Wait</span>
+                  <span class="row-val text-accent">~5 Minutes (Walk-ins Welcome)</span>
+                </div>
+                <div class="floating-row">
+                  <span class="row-label">Batch of the Hour</span>
+                  <span class="row-val">Bababudangiri Washed Arabica</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: OUR TERROIR & CRAFT PHILOSOPHY -->
+    <section class="section terroir-section" id="about">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow">OUR CRAFT & INDORE SOUL</span>
+          <h2 class="section-title">Rooted in Malwa Hospitality. <br />Obsessed with Third-Wave Precision.</h2>
+          <p class="section-description">
+            Indore has always been India’s gastronomic capital—a city that understands aroma, spice, and sweetness like no other. At Roast & Botanica, we extend this culinary passion into specialty coffee: sourcing single-estate harvests, roasting them in Vijay Nagar, and pairing them with slow-crafted bakery goods.
+          </p>
+        </div>
+
+        <div class="terroir-grid">
+          
+          <div class="terroir-card">
+            <div class="terroir-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="terroir-card-title">100% Traceable Indian Micro-Lots</h3>
+            <p class="terroir-card-text">
+              We bypass commodity brokers and partner directly with generational farmers across Chikmagalur, Ratnagiri, Araku, and Coorg. Every bag lists the elevation, farmer family name, and harvest date.
+            </p>
+            <div class="terroir-meta">Estates: Ratnagiri · Attikan · Kerehaklu</div>
+          </div>
+
+          <div class="terroir-card">
+            <div class="terroir-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="terroir-card-title">Precision Micro-Roasting</h3>
+            <p class="terroir-card-text">
+              Each bean variety possesses a unique sugar and acid blueprint. Our head roasters develop individualized roast profiles using live convective airflow curves to unlock fruit acidity and caramelized sweetness.
+            </p>
+            <div class="terroir-meta">Roasted weekly in Vijay Nagar, Indore</div>
+          </div>
+
+          <div class="terroir-card">
+            <div class="terroir-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3 class="terroir-card-title">48-Hour Fermented Sourdough</h3>
+            <p class="terroir-card-text">
+              Our bakery kitchen uses a 7-year-old sourdough mother culture. No commercial dough conditioners or shortcuts—just organic stoneground flour, pure filtered water, and 48 hours of slow wild fermentation.
+            </p>
+            <div class="terroir-meta">Golden blistered crust · Open airy crumb</div>
+          </div>
+
+          <div class="terroir-card">
+            <div class="terroir-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="terroir-card-title">Dedicated Jain & Vegan Curations</h3>
+            <p class="terroir-card-text">
+              Respecting Indore’s diverse culinary traditions, our menu features dedicated kitchen sections for pure Jain-friendly preparations, dairy-free barista milks (Oat, Almond, Soy), and eggless bakery staples.
+            </p>
+            <div class="terroir-meta">Zero cross-contamination · Clearly badged</div>
+          </div>
+
+        </div>
+
+        <!-- Visual Coffee Bar Split Showcase -->
+        <div class="craft-feature-split">
+          <div class="split-image-container">
+            <img 
+              src="assets/images/coffee-pourover.jpg" 
+              alt="Hario V60 hand pour-over coffee extraction with ceramic latte cup at Roast and Botanica" 
+              class="split-img"
+              loading="lazy"
+            />
+            <div class="split-badge">
+              <span class="badge-title">SINGLE HARVEST FLAVOR</span>
+              <span class="badge-sub">Notes of Dried Figs, Bergamot & Wild Honey</span>
+            </div>
+          </div>
+          <div class="split-text-container">
+            <span class="section-eyebrow">THE POUR-OVER RITUAL</span>
+            <h3 class="split-title">Experience Coffee as a Pure Fruit Infusion.</h3>
+            <p class="split-paragraph">
+              Commercial dark roasts mask stale beans with bitter char. Our specialty pour-overs are brewed with 93°C alkaline mineral-balanced water through Japanese Hario V60 drippers, uncovering delicate notes of peach blossoms, dried orange peel, and dark cacao nibs.
+            </p>
+            <ul class="craft-check-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Mahlkönig EK43S Grinding:</strong> Uniform micro-particle distribution prevents bitterness.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Brewed Fresh to Order:</strong> 3-minute timed bloom cycle right before your eyes.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-amber)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Served in Artisanal Studio Ceramics:</strong> Hand-thrown clay vessels made locally.</span>
+              </li>
+            </ul>
+            <div class="split-cta-wrap">
+              <a href="#brew-guide" class="btn btn-secondary">Try Interactive Brew Timer</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SENSORY TASTING MENU & INTERACTIVE TRAY -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow">OUR CULINARY REPERTOIRE</span>
+          <h2 class="section-title">The Sensory Tasting Menu</h2>
+          <p class="section-description">
+            Filter our craft menu by category or dietary preferences. Add your selections to your personal Tasting Tray to customize milks, view nutritional notes, and order ahead.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="menu-filter-bar">
+          
+          <!-- Category Tabs -->
+          <div class="category-tabs" role="tablist" aria-label="Menu categories">
+            <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">All Offerings</button>
+            <button class="cat-tab" data-category="pourover" role="tab" aria-selected="false">Single-Origin Pour-Overs</button>
+            <button class="cat-tab" data-category="espresso" role="tab" aria-selected="false">Espresso & Signatures</button>
+            <button class="cat-tab" data-category="sourdough" role="tab" aria-selected="false">Sourdough & Brunch</button>
+            <button class="cat-tab" data-category="bakery" role="tab" aria-selected="false">Artisanal Bakehouse</button>
+            <button class="cat-tab" data-category="coolers" role="tab" aria-selected="false">Cold Brews & Tonics</button>
+          </div>
+
+          <!-- Dietary Preference Toggles -->
+          <div class="dietary-filter-group">
+            <span class="diet-filter-label">Dietary:</span>
+            <button class="diet-pill" data-diet="jain">🌿 Jain Friendly</button>
+            <button class="diet-pill" data-diet="veg">🟢 100% Veg</button>
+            <button class="diet-pill" data-diet="vegan">🌱 Vegan</button>
+            <button class="diet-pill" data-diet="gluten-free">🌾 Gluten-Free Option</button>
+          </div>
+
+        </div>
+
+        <!-- Live Menu Grid -->
+        <div class="menu-grid" id="menu-items-grid">
+          <!-- Dynamically populated via main.js with 18+ rich handcrafted items -->
+        </div>
+
+        <!-- Bottom Notice -->
+        <div class="menu-footer-notice">
+          <p>
+            ✨ <em>All coffees can be customized with Oat Milk (+₹45), Almond Milk (+₹45), or Decaf Single Origin. We prepare every dish fresh in small batches.</em>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE COFFEE MATCHMAKER QUIZ -->
+    <section class="section quiz-section" id="quiz">
+      <div class="container">
+        
+        <div class="quiz-container">
+          <div class="quiz-intro">
+            <span class="section-eyebrow">COFFEE CONCIERGE</span>
+            <h2 class="quiz-title">Find Your Perfect Indore Cup.</h2>
+            <p class="quiz-subtitle">
+              Not sure which micro-lot or brewing technique fits your palate today? Answer 3 quick sensory questions and our roaster engine will calculate your ideal pairing.
+            </p>
+          </div>
+
+          <!-- Quiz Multi-Step Form -->
+          <div class="quiz-card" id="quiz-card">
+            
+            <div class="quiz-progress-bar">
+              <div class="progress-fill" id="quiz-progress" style="width: 33%;"></div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="quiz-step active" data-step="1">
+              <span class="step-counter">Question 1 of 3</span>
+              <h3 class="step-question">How do you prefer your coffee brewed?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-answer="black">
+                  <span class="option-icon">☕</span>
+                  <strong class="option-title">Pure & Black</strong>
+                  <span class="option-desc">Clean, aromatic, terroir-forward without milk</span>
+                </button>
+                <button class="quiz-option" data-answer="milk">
+                  <span class="option-icon">🥛</span>
+                  <strong class="option-title">Velvety with Milk</strong>
+                  <span class="option-desc">Silky micro-foam, balanced sweetness, comforting</span>
+                </button>
+                <button class="quiz-option" data-answer="cold">
+                  <span class="option-icon">🧊</span>
+                  <strong class="option-title">Chilled & Refreshing</strong>
+                  <span class="option-desc">Cold drip, sparkling tonic, or iced botanical foam</span>
+                </button>
+                <button class="quiz-option" data-answer="sweet">
+                  <span class="option-icon">🍯</span>
+                  <strong class="option-title">Rich & Sweet Dessert</strong>
+                  <span class="option-desc">Affogato, Belgian mocha, or spiced Malwa cream</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" data-step="2">
+              <span class="step-counter">Question 2 of 3</span>
+              <h3 class="step-question">What sensory flavor profile excites your tastebuds?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-answer="floral">
+                  <span class="option-icon">🌸</span>
+                  <strong class="option-title">Bright, Floral & Citrus</strong>
+                  <span class="option-desc">Jasmine, bergamot, green apple, peach sweetness</span>
+                </button>
+                <button class="quiz-option" data-answer="chocolate">
+                  <span class="option-icon">🍫</span>
+                  <strong class="option-title">Chocolate, Roasted Nut & Caramel</strong>
+                  <span class="option-desc">Cacao nibs, toasted hazelnut, brown sugar, creamy body</span>
+                </button>
+                <button class="quiz-option" data-answer="berry">
+                  <span class="option-icon">🍒</span>
+                  <strong class="option-title">Wild Berry & Winey Ferment</strong>
+                  <span class="option-desc">Black cherry, dried fig, port wine, complex funk</span>
+                </button>
+                <button class="quiz-option" data-answer="spiced">
+                  <span class="option-icon">🌿</span>
+                  <strong class="option-title">Malwa Spiced & Cardamom</strong>
+                  <span class="option-desc">Cinnamon bark, green cardamom, roasted ginger finish</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" data-step="3">
+              <span class="step-counter">Question 3 of 3</span>
+              <h3 class="step-question">What is your mood or occasion at the cafe today?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-answer="focus">
+                  <span class="option-icon">💻</span>
+                  <strong class="option-title">Deep Work & Laptop Session</strong>
+                  <span class="option-desc">Prolonged clean energy, minimal sugar crash</span>
+                </button>
+                <button class="quiz-option" data-answer="date">
+                  <span class="option-icon">✨</span>
+                  <strong class="option-title">Intimate Date or Conversation</strong>
+                  <span class="option-desc">Sensory conversation starter to sip slowly</span>
+                </button>
+                <button class="quiz-option" data-answer="brunch">
+                  <span class="option-icon">🥑</span>
+                  <strong class="option-title">Weekend Leisure Brunch</strong>
+                  <span class="option-desc">Pairing perfectly with sourdough and flaky croissants</span>
+                </button>
+                <button class="quiz-option" data-answer="evening">
+                  <span class="option-icon">🎷</span>
+                  <strong class="option-title">Evening Wind-Down & Jazz</strong>
+                  <span class="option-desc">Low acidity, soothing finish, dessert pairing</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Result Container -->
+            <div class="quiz-result-view" id="quiz-result" style="display: none;">
+              <div class="result-badge">YOUR PERFECT SENSORY MATCH</div>
+              <h3 class="result-title" id="result-bean-title">Ratnagiri Estate Honey Process V60</h3>
+              <p class="result-tasting-notes" id="result-notes">Tasting Notes: Bergamot Blossom · White Peach · Wild Honeycomb</p>
+              <p class="result-explanation" id="result-desc">
+                Crafted for those who appreciate clarity and delicate fruit terroir. This shade-grown micro-lot from Bababudangiri is hand-pulled through an unbleached paper filter to give you clean, lingering sweetness.
+              </p>
+              
+              <div class="result-pairing-box">
+                <strong>Recommended Bakery Pairing:</strong>
+                <span id="result-pairing">Warm Pistachio Cardamom Babka or Fresh Sourdough Tartine</span>
+              </div>
+
+              <div class="result-action-row">
+                <button class="btn btn-primary" id="add-quiz-to-tray">Add to Tasting Tray</button>
+                <button class="btn btn-secondary" id="restart-quiz">Retake Quiz</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE BREW BAR & EXTRACTION TIMER -->
+    <section class="section brew-section" id="brew-guide">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow">BARISTA THEATRE & SCIENCE</span>
+          <h2 class="section-title">Interactive Extraction Timer</h2>
+          <p class="section-description">
+            Watch how our baristas brew behind the counter, or use this digital guide to time your manual brew at home with Roast & Botanica beans.
+          </p>
+        </div>
+
+        <div class="brew-interactive-card">
+          
+          <!-- Method Selection Tabs -->
+          <div class="brew-method-tabs" role="tablist">
+            <button class="brew-tab active" data-method="v60">
+              <span class="brew-tab-icon">⏳</span>
+              <span class="brew-tab-name">Hario V60 Pour-Over</span>
+            </button>
+            <button class="brew-tab" data-method="aeropress">
+              <span class="brew-tab-icon">🧪</span>
+              <span class="brew-tab-name">Aeropress Inverted</span>
+            </button>
+            <button class="brew-tab" data-method="espresso">
+              <span class="brew-tab-icon">☕</span>
+              <span class="brew-tab-name">Synesso Espresso 9-Bar</span>
+            </button>
+            <button class="brew-tab" data-method="coldbrew">
+              <span class="brew-tab-icon">🧊</span>
+              <span class="brew-tab-name">Kyoto Cold Drip Tower</span>
+            </button>
+          </div>
+
+          <!-- Brew Spec Display Grid -->
+          <div class="brew-dashboard">
+            
+            <div class="brew-metrics-grid">
+              <div class="brew-metric">
+                <span class="metric-label">Dose</span>
+                <span class="metric-data" id="brew-dose">16.0g</span>
+              </div>
+              <div class="brew-metric">
+                <span class="metric-label">Water Yield</span>
+                <span class="metric-data" id="brew-yield">250ml</span>
+              </div>
+              <div class="brew-metric">
+                <span class="metric-label">Water Temp</span>
+                <span class="metric-data" id="brew-temp">93.5°C</span>
+              </div>
+              <div class="brew-metric">
+                <span class="metric-label">Grind Size</span>
+                <span class="metric-data" id="brew-grind">Medium-Fine (EK43 #8)</span>
+              </div>
+            </div>
+
+            <!-- Live Digital Timer & Phase Display -->
+            <div class="timer-visual-stage">
+              <div class="timer-ring-container">
+                <svg class="timer-svg" width="220" height="220" viewBox="0 0 220 220">
+                  <circle class="timer-bg-circle" cx="110" cy="110" r="95"></circle>
+                  <circle class="timer-progress-circle" id="timer-progress-circle" cx="110" cy="110" r="95"></circle>
+                </svg>
+                <div class="timer-display-inner">
+                  <span class="timer-digital-clock" id="timer-digits">00:00</span>
+                  <span class="timer-phase-tag" id="timer-phase">Ready to Bloom</span>
+                </div>
+              </div>
+
+              <!-- Phase Instructions -->
+              <div class="phase-instruction-card">
+                <h4 class="instruction-title" id="instruction-title">Step 1: The 45-Second Bloom</h4>
+                <p class="instruction-text" id="instruction-body">
+                  Pour 50ml of 93°C water in gentle concentric circles. Watch the freshly roasted coffee de-gas and puff into a velvety aromatic bloom.
+                </p>
+                <div class="timer-control-buttons">
+                  <button class="btn btn-primary" id="start-brew-btn">Start Extraction Timer</button>
+                  <button class="btn btn-outline" id="reset-brew-btn">Reset</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE CONSERVATORY SPACES & AMBIENCE -->
+    <section class="section spaces-section" id="spaces">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow">BIOPHILIC ARCHITECTURE</span>
+          <h2 class="section-title">Four Distinct Sanctuaries. One Glasshouse.</h2>
+          <p class="section-description">
+            Designed around living ficus trees, hand-chiseled Malwa Kota stone, and acoustics tuned for effortless conversation. Pick your favorite corner.
+          </p>
+        </div>
+
+        <div class="spaces-grid">
+          
+          <!-- Space 1 -->
+          <div class="space-card">
+            <div class="space-img-wrapper">
+              <img src="assets/images/cafe-interior.jpg" alt="The Glasshouse Conservatory Atrium" loading="lazy" />
+              <span class="space-tag">THE GREENHOUSE ATRIUM</span>
+            </div>
+            <div class="space-info">
+              <h3 class="space-name">The Glasshouse Conservatory</h3>
+              <p class="space-desc">
+                High vaulted glass skylights, over 120 varieties of potted monsteras, ferns, and banana palms. Sunlit mornings with crisp natural light ideal for leisurely brunch dates.
+              </p>
+              <div class="space-perks">
+                <span>🌱 Natural Sunlight</span>
+                <span>☕ Roaster View</span>
+                <span>✨ Quiet Morning Vibe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Space 2 -->
+          <div class="space-card">
+            <div class="space-img-wrapper">
+              <img src="assets/images/coffee-roaster.jpg" alt="The Roaster's Tasting Counter" loading="lazy" />
+              <span class="space-tag">THE BREW BAR</span>
+            </div>
+            <div class="space-info">
+              <h3 class="space-name">The Roaster’s Tasting Counter</h3>
+              <p class="space-desc">
+                Front-row walnut bar seating directly across our Synesso espresso bench and manual Hario V60 station. Converse with our baristas about origin terroir while tasting fresh micro-lots.
+              </p>
+              <div class="space-perks">
+                <span>⚡ High Energy</span>
+                <span>👨‍🍳 Barista Interaction</span>
+                <span>🔥 Fresh Aroma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Space 3 -->
+          <div class="space-card">
+            <div class="space-img-wrapper">
+              <img src="assets/images/verandah-evening.jpg" alt="The Open-Air Foliage Verandah" loading="lazy" />
+              <span class="space-tag">PET-FRIENDLY ALFRESCO</span>
+            </div>
+            <div class="space-info">
+              <h3 class="space-name">The Foliage Verandah</h3>
+              <p class="space-desc">
+                Lush outdoor courtyard nestled under a majestic canopy of neem trees. Fairy lights, gentle evening breeze, and 100% pet-friendly seating with complimentary water bowls for furry friends.
+              </p>
+              <div class="space-perks">
+                <span>🐾 Pet Friendly</span>
+                <span>🌙 Evening Fairy Lights</span>
+                <span>🍃 Outdoor Air</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Space 4 -->
+          <div class="space-card">
+            <div class="space-img-wrapper">
+              <img src="assets/images/sourdough-brunch.jpg" alt="The Library Mezzanine" loading="lazy" />
+              <span class="space-tag">MEZZANINE WORKSTUDIO</span>
+            </div>
+            <div class="space-info">
+              <h3 class="space-name">The Library Mezzanine</h3>
+              <p class="space-desc">
+                Elevated quiet mezzanine fitted with ergonomic oak tables, individual universal power sockets, dedicated 300 Mbps fiber Wi-Fi, and curated art and design books.
+              </p>
+              <div class="space-perks">
+                <span>⚡ 300 Mbps Fiber</span>
+                <span>🔌 Power at Every Seat</span>
+                <span>🤫 Low-Volume Zone</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TABLE RESERVATION ENGINE -->
+    <section class="section reserve-section" id="reserve">
+      <div class="container">
+        
+        <div class="reservation-card-wrapper">
+          <div class="reserve-content-side">
+            <span class="section-eyebrow">INDORE HOSPITALITY</span>
+            <h2 class="reserve-title">Reserve Your Conservatory Table</h2>
+            <p class="reserve-text">
+              While we always maintain walk-in tables for spontaneous visits, reservations are recommended for weekend brunches, evening acoustic jazz sessions, and group cupping experiences.
+            </p>
+
+            <div class="reserve-perks-list">
+              <div class="r-perk">
+                <span class="r-icon">🪑</span>
+                <div>
+                  <strong>Guaranteed Seating in Your Preferred Zone</strong>
+                  <span>Glasshouse, Verandah, or Quiet Mezzanine</span>
+                </div>
+              </div>
+              <div class="r-perk">
+                <span class="r-icon">☕</span>
+                <div>
+                  <strong>Complimentary Welcome Cold Drip Shot</strong>
+                  <span>Tasting sample of our micro-lot of the day</span>
+                </div>
+              </div>
+              <div class="r-perk">
+                <span class="r-icon">🚗</span>
+                <div>
+                  <strong>Complimentary Valet Parking</strong>
+                  <span>Hassle-free parking at Scheme 54 entrance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reservation Form Side -->
+          <div class="reserve-form-side">
+            <form class="booking-form" id="booking-form">
+              <h3 class="form-title">Book Experience</h3>
+              
+              <div class="form-group">
+                <label for="book-name">Your Full Name</label>
+                <input type="text" id="book-name" required placeholder="e.g. Suryansh Jain" />
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="book-phone">WhatsApp Contact</label>
+                  <input type="tel" id="book-phone" required placeholder="+91 98260 XXXXX" />
+                </div>
+                <div class="form-group">
+                  <label for="book-guests">Guests</label>
+                  <select id="book-guests" required>
+                    <option value="1">1 Person (Solo Work)</option>
+                    <option value="2" selected>2 Persons (Date / Catchup)</option>
+                    <option value="3">3 - 4 Persons</option>
+                    <option value="5">5 - 6 Persons</option>
+                    <option value="7">7 - 10 Persons (Large Table)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="book-date">Date</label>
+                  <input type="date" id="book-date" required />
+                </div>
+                <div class="form-group">
+                  <label for="book-time">Time Slot</label>
+                  <select id="book-time" required>
+                    <option value="08:30 AM">08:30 AM (Morning Brew)</option>
+                    <option value="10:00 AM">10:00 AM (Brunch Rush)</option>
+                    <option value="12:30 PM">12:30 PM (Midday Sourdough)</option>
+                    <option value="03:30 PM">03:30 PM (Afternoon Cupping)</option>
+                    <option value="05:30 PM" selected>05:30 PM (Golden Hour Sunset)</option>
+                    <option value="07:30 PM">07:30 PM (Dinner & Dessert)</option>
+                    <option value="09:30 PM">09:30 PM (Late Night Jazz)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="book-zone">Preferred Conservatory Zone</label>
+                <select id="book-zone">
+                  <option value="The Glasshouse Conservatory">The Glasshouse Conservatory (Sunlit Atrium)</option>
+                  <option value="The Roaster's Tasting Bar">The Roaster's Tasting Bar (Barista Interaction)</option>
+                  <option value="The Foliage Verandah (Pet Friendly)">The Foliage Verandah (Open Air · Pet Friendly)</option>
+                  <option value="The Library Mezzanine">The Library Mezzanine (Quiet Work Studio)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="book-requests">Special Notes or Dietary Preferences</label>
+                <input type="text" id="book-requests" placeholder="e.g. Jain preparation, bringing my golden retriever, birthday dessert" />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="reserve-submit-btn">
+                <span>Confirm & Send via WhatsApp</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+
+              <p class="form-privacy-note">
+                🔒 Instant instant confirmation. No prepayment required.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INDORE COMMUNITY & FOOD CRITIC REVIEWS -->
+    <section class="section reviews-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-eyebrow">VOICES OF CENTRAL INDIA</span>
+          <h2 class="section-title">Loved by Indore's True Foodies</h2>
+          <p class="section-description">
+            What architects, coffee geeks, and generational Indore food lovers say about Roast & Botanica.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “Finally, a cafe in Indore that doesn’t just burn beans and drown them in sugar syrup! Their Ratnagiri Honey pour-over is magnificent—fruity, bright, and clean. The greenhouse design feels straight out of Copenhagen or Tokyo.”
+            </p>
+            <div class="reviewer-meta">
+              <strong>Arjun Singhal</strong>
+              <span>Architect & Urban Designer, Saket Nagar</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “As someone who follows strict Jain dietary rules, finding a luxury cafe that understands cross-contamination is rare. Their Jain Avocado Sourdough and Cardamom Cold Brew are stellar. Cleanest, greenest vibe in Vijay Nagar.”
+            </p>
+            <div class="reviewer-meta">
+              <strong>Pooja Jain</strong>
+              <span>Food Stylist & Indore Food Guide</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              “The Library Mezzanine is my daily workspace. 300 Mbps Wi-Fi, natural light through the glass roof, and endless flat whites made with oat milk. Easily the highest standard cafe in Madhya Pradesh.”
+            </p>
+            <div class="reviewer-meta">
+              <strong>Devashish Sharma</strong>
+              <span>Tech Founder, Indore</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: LOCATION, TRAVEL TIME CALCULATOR & HOURS -->
+    <section class="section location-section" id="location">
+      <div class="container">
+        
+        <div class="location-wrapper">
+          <div class="location-info-side">
+            <span class="section-eyebrow">HOW TO FIND US</span>
+            <h2 class="location-title">Visit Us in Scheme 54, Vijay Nagar</h2>
+            
+            <div class="loc-detail-group">
+              <div class="loc-item">
+                <span class="loc-icon">📍</span>
+                <div>
+                  <strong>Flagship Roastery & Conservatory:</strong>
+                  <p>Plot 14-B, PU-4 Commercial, Behind C21 Mall, Scheme 54, Indore, MP 452010</p>
+                </div>
+              </div>
+
+              <div class="loc-item">
+                <span class="loc-icon">☕</span>
+                <div>
+                  <strong>Express Espresso Bar (Old Palasia):</strong>
+                  <p>11 Saket Square Link, Old Palasia, Indore 452001 (Open 7:30 AM – 10:00 PM)</p>
+                </div>
+              </div>
+
+              <div class="loc-item">
+                <span class="loc-icon">⏰</span>
+                <div>
+                  <strong>Operating Hours:</strong>
+                  <p>Monday – Sunday: 8:00 AM – 11:30 PM (Kitchen closes at 11:00 PM)</p>
+                </div>
+              </div>
+
+              <div class="loc-item">
+                <span class="loc-icon">📞</span>
+                <div>
+                  <strong>Concierge & Table Reservations:</strong>
+                  <p><a href="tel:+919826078690" class="loc-tel">+91 98260 78690</a> / <a href="mailto:concierge@roastbotanica.com">concierge@roastbotanica.com</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Indore Landmark Travel Estimator -->
+            <div class="indore-travel-calculator">
+              <span class="calc-title">🚘 Travel Time to Roast & Botanica (Vijay Nagar):</span>
+              <div class="landmark-pill-grid">
+                <div class="landmark-pill active" data-time="3 mins" data-landmark="Vijay Nagar Square">
+                  <span class="lm-name">Vijay Nagar Sq.</span>
+                  <span class="lm-time">3 mins</span>
+                </div>
+                <div class="landmark-pill" data-time="5 mins" data-landmark="C21 / Malhar Mega Mall">
+                  <span class="lm-name">C21 Mall</span>
+                  <span class="lm-time">5 mins</span>
+                </div>
+                <div class="landmark-pill" data-time="12 mins" data-landmark="56 Dukan (Chappan)">
+                  <span class="lm-name">Chappan Dukan</span>
+                  <span class="lm-time">12 mins</span>
+                </div>
+                <div class="landmark-pill" data-time="15 mins" data-landmark="Old Palasia">
+                  <span class="lm-name">Old Palasia</span>
+                  <span class="lm-time">14 mins</span>
+                </div>
+                <div class="landmark-pill" data-time="22 mins" data-landmark="Indore Airport (IDR)">
+                  <span class="lm-name">Airport (IDR)</span>
+                  <span class="lm-time">22 mins</span>
+                </div>
+              </div>
+              <div class="travel-display-note" id="travel-display-note">
+                From <strong>Vijay Nagar Square</strong>, head 800m down AB Road past Meghdoot Garden. Turn left into PU-4 Commercial. Valet parking on right.
+              </div>
+            </div>
+
+            <div class="location-btn-cluster">
+              <a href="https://maps.google.com/?q=Vijay+Nagar+Indore+Roast+Botanica" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                <span>Open in Google Maps</span>
+              </a>
+              <a href="tel:+919826078690" class="btn btn-secondary">Call Cafe Host</a>
+            </div>
+
+          </div>
+
+          <!-- Right: Visual Atmosphere Map Card -->
+          <div class="location-map-side">
+            <div class="map-visual-card">
+              <img src="assets/images/verandah-evening.jpg" alt="Evening verandah at Roast & Botanica Indore" class="map-cover-img" />
+              <div class="map-card-floating-badge">
+                <span class="badge-icon">🌿</span>
+                <span class="badge-text">Valet Parking Available · Pet Friendly Patio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SLIDE-OVER TASTING TRAY / CART DRAWER -->
+  <div class="tray-drawer-backdrop" id="tray-backdrop" aria-hidden="true"></div>
+  <aside class="tasting-tray-drawer" id="tray-drawer" aria-label="Your Tasting Tray" aria-hidden="true">
+    <div class="tray-drawer-header">
+      <div class="tray-title-block">
+        <h3 class="tray-drawer-title">Your Tasting Tray</h3>
+        <span class="tray-drawer-subtitle">Handcrafted Selections for Today</span>
+      </div>
+      <button class="tray-close-btn" id="close-tray-btn" aria-label="Close Tasting Tray">✕</button>
+    </div>
+
+    <!-- Items List -->
+    <div class="tray-items-container" id="tray-items-list">
+      <div class="tray-empty-state">
+        <span class="empty-icon">☕</span>
+        <h4>Your tray is currently empty</h4>
+        <p>Explore our single-origin pour-overs, cold ferments, or sourdough brunch dishes and add them to taste.</p>
+        <a href="#menu" class="btn btn-secondary btn-sm" id="empty-explore-btn">Browse Menu</a>
+      </div>
+    </div>
+
+    <!-- Tray Footer & Checkout -->
+    <div class="tray-drawer-footer" id="tray-footer" style="display: none;">
+      
+      <!-- Milk & Customization Select -->
+      <div class="tray-customization-box">
+        <label for="tray-milk-select">Barista Milk Preference:</label>
+        <select id="tray-milk-select">
+          <option value="Regular Dairy (Whole Milk)">Whole Country Dairy Milk (Default)</option>
+          <option value="Oat Milk (+₹45)">Silky Oat Milk (+₹45)</option>
+          <option value="Almond Milk (+₹45)">Roasted Almond Milk (+₹45)</option>
+          <option value="Soy Milk (+₹35)">Barista Soy Milk (+₹35)</option>
+          <option value="Black (No Milk)">Black / Unfiltered (No Milk)</option>
+        </select>
+      </div>
+
+      <!-- Bill Breakdown -->
+      <div class="tray-bill-breakdown">
+        <div class="bill-row">
+          <span>Subtotal</span>
+          <span id="tray-subtotal">₹0</span>
+        </div>
+        <div class="bill-row text-muted">
+          <span>Taxes & GST (5%)</span>
+          <span id="tray-tax">₹0</span>
+        </div>
+        <div class="bill-row bill-total">
+          <span>Estimated Total</span>
+          <span id="tray-total">₹0</span>
+        </div>
+      </div>
+
+      <!-- Checkout via WhatsApp / Pre-Order -->
+      <button class="btn btn-primary btn-block" id="tray-whatsapp-checkout">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+        </svg>
+        <span>Send Order to Barista via WhatsApp</span>
+      </button>
+
+      <span class="tray-note">⚡ Orders are instantly routed to our barista bench in Vijay Nagar.</span>
+    </div>
+  </aside>
+
+  <!-- QUICK VIEW DETAIL MODAL -->
+  <div class="modal-backdrop" id="detail-modal-backdrop" aria-hidden="true"></div>
+  <div class="detail-modal" id="detail-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+    <div class="modal-inner" id="modal-content-area">
+      <!-- Populated dynamically via main.js -->
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content-grid">
+      
+      <div class="footer-col brand-col">
+        <div class="footer-brand-title">ROAST & BOTANICA</div>
+        <p class="footer-brand-desc">
+          Central India’s benchmark specialty coffee micro-roastery and botanical bistro. Handcrafted with reverence for shade-grown Indian coffee terroir, natural wild fermentation, and Indore’s timeless culinary hospitality.
+        </p>
+        <div class="footer-certifications">
+          <span class="cert-tag">SCA Specialty Grade</span>
+          <span class="cert-tag">Direct Trade Certified</span>
+          <span class="cert-tag">Zero Artificial Essences</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Conservatory</h4>
+        <ul class="footer-links">
+          <li><a href="#about">Our Terroir & Micro-Lots</a></li>
+          <li><a href="#menu">Sensory Tasting Menu</a></li>
+          <li><a href="#quiz">Find Your Brew Quiz</a></li>
+          <li><a href="#brew-guide">Digital Extraction Timer</a></li>
+          <li><a href="#spaces">Conservatory Spaces</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Sanctuaries</h4>
+        <ul class="footer-links">
+          <li><strong>Vijay Nagar Flagship:</strong> Behind C21 Mall, PU-4</li>
+          <li><strong>Old Palasia Express Bar:</strong> 11 Saket Square Link</li>
+          <li><strong>Hours:</strong> 8:00 AM – 11:30 PM (Daily)</li>
+          <li><strong>Table Desk:</strong> +91 98260 78690</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Indore Culinary Heritage</h4>
+        <p class="footer-note">
+          Crafted with pride in Madhya Pradesh. 100% locally roasted beans, fresh stone-ground sourdough, and warm Malwa smiles.
+        </p>
+        <div class="footer-social-links">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-icon-btn" aria-label="Spotify Cafe Playlist">🎵</a>
+          <a href="#" class="social-icon-btn" aria-label="Google Maps Reviews">★</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <div class="copyright-text">
+          © 2026 Roast & Botanica Roasters Ltd. All rights reserved. Designed for Indore’s Connoisseurs.
+        </div>
+        <div class="footer-sub-links">
+          <a href="#home">Back to Top ↑</a>
+          <span>·</span>
+          <a href="#reserve">Reserve a Table</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Modular Javascript -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

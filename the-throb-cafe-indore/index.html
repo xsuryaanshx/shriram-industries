@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>The Throb Cafe · Indore · Vibe. Sip. Connect.</title>
+  <meta name="description" content="Discover The Throb Cafe in Indore, where good vibes meet great food. Enjoy cozy corners, reliable Wi-Fi, handcrafted pizzas, loaded fries, and an atmosphere built for dates, hangouts, and good conversations." />
+  <meta name="theme-color" content="#261c16" />
+
+  <!-- Typography: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org Microdata -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "The Throb Cafe",
+    "image": "assets/images/cafe-cozy-vibe.jpg",
+    "telephone": "+919685514326",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Indore",
+      "addressRegion": "Madhya Pradesh",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "23:30"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-notice-bar">
+    <div class="container top-notice-inner">
+      <div class="notice-status">
+        <span class="status-dot"></span>
+        <span>Open Today in Indore · 11:00 AM – 11:30 PM · Walk-ins & Reservations Welcome</span>
+      </div>
+      <div class="notice-links">
+        <a href="tel:+919685514326" class="top-phone-link">+91 96855 14326</a>
+        <span>Indore, Madhya Pradesh</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      
+      <a href="#home" class="site-brand">
+        <span class="brand-title">The Throb Cafe</span>
+        <span class="brand-meta">Indore · Est. 2024</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">The Cafe</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#reservations" class="nav-link">Book a Table</a>
+        <a href="#gallery" class="nav-link">Moments</a>
+        <a href="#location" class="nav-link">Visit</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <button class="tray-badge-btn" id="open-tray-btn" aria-label="View Food Tray">
+          <span>Order Tray</span>
+          <span class="tray-count-circle" id="tray-count-badge">0</span>
+        </button>
+
+        <a href="#reservations" class="btn btn-solid-dark btn-sm">
+          <span>Reserve Table</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION (EDITORIAL & ARCHITECTURAL) -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        
+        <div class="hero-text-block">
+          <span class="section-label">Aesthetic Chill Zone · Indore</span>
+          
+          <h1 class="hero-statement">
+            Where good food meets <br />
+            <em>unfiltered conversations.</em>
+          </h1>
+
+          <p class="hero-body-text">
+            Designed for slow afternoons, date nights, and spontaneous friend catch-ups. Enjoy hand-stretched pizzas, loaded fries, thick shakes, and cozy corners bathed in warm ambient light.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-solid-dark">Explore Our Menu</a>
+            <a href="#reservations" class="btn btn-outline-dark">Book a Date Table</a>
+            <a href="https://wa.me/919685514326" target="_blank" class="btn btn-terracotta">WhatsApp Direct</a>
+          </div>
+
+          <div class="hero-footnotes">
+            <div class="footnote-entry">
+              <span class="fn-num">4.8</span>
+              <span class="fn-label">Google Rating (3,200+ Reviews)</span>
+            </div>
+            <div class="fn-divider"></div>
+            <div class="footnote-entry">
+              <span class="fn-num">100%</span>
+              <span class="fn-label">Pure Vegetarian & Jain Options</span>
+            </div>
+            <div class="fn-divider"></div>
+            <div class="footnote-entry">
+              <span class="fn-num">300 Mbps</span>
+              <span class="fn-label">High-Speed Wi-Fi for Work</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-frame">
+          <div class="hero-main-photo">
+            <img src="assets/images/cafe-cozy-vibe.jpg" alt="Cozy seating corner inside The Throb Cafe, Indore" />
+            <div class="photo-caption-tag">
+              <span>Main Dining & Corner Booths</span>
+              <span>The Throb Cafe, Indore</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: THE EXPERIENCE -->
+    <section class="section experience-section" id="about">
+      <div class="container">
+        
+        <div class="text-center">
+          <span class="section-label">The Atmosphere</span>
+          <h2 class="section-headline">Crafted For Connection.</h2>
+          <p class="section-lead">
+            We built The Throb around the simple belief that a cafe should feel welcoming, unpretentious, and alive with good energy.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          
+          <div class="exp-card">
+            <span class="exp-num">01</span>
+            <h3 class="exp-title">Date & Anniversary Corners</h3>
+            <p class="exp-text">
+              Warm dim lighting, private booths, and fairy-lit backdrops. We arrange personalized candlelight and flower setups for birthdays, anniversaries, and date nights.
+            </p>
+          </div>
+
+          <div class="exp-card">
+            <span class="exp-num">02</span>
+            <h3 class="exp-title">Honest Comfort Food</h3>
+            <p class="exp-text">
+              Thin-crust pizzas with 100% real mozzarella, peri-peri loaded fries, crispy burgers, and decadent sizzling brownies made fresh to order.
+            </p>
+          </div>
+
+          <div class="exp-card">
+            <span class="exp-num">03</span>
+            <h3 class="exp-title">Study & Remote Work</h3>
+            <p class="exp-text">
+              Accessible charging ports at booth seating, 300 Mbps fiber internet, and quiet daytime playlists to help you read, write, or work with a cold coffee in hand.
+            </p>
+          </div>
+
+          <div class="exp-card">
+            <span class="exp-num">04</span>
+            <h3 class="exp-title">Board Games & Gatherings</h3>
+            <p class="exp-text">
+              A curated collection of board games from UNO to Jenga for your squad, along with weekend acoustic music sessions.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: MENU -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        
+        <div class="text-center">
+          <span class="section-label">Our Kitchen & Bar</span>
+          <h2 class="section-headline">The Throb Menu</h2>
+          <p class="section-lead">
+            Made fresh in small batches. Select your favorites to add to your order tray and send directly to our kitchen counter via WhatsApp.
+          </p>
+        </div>
+
+        <!-- Filter Navigation -->
+        <div class="menu-filter-row">
+          <button class="filter-tab active" data-cat="all">All Items</button>
+          <button class="filter-tab" data-cat="pizza">Pizzas</button>
+          <button class="filter-tab" data-cat="fries">Loaded Fries</button>
+          <button class="filter-tab" data-cat="burgers">Burgers & Sliders</button>
+          <button class="filter-tab" data-cat="pasta">Pastas</button>
+          <button class="filter-tab" data-cat="shakes">Shakes & Cold Coffee</button>
+          <button class="filter-tab" data-cat="desserts">Desserts</button>
+          
+          <button class="diet-toggle-pill" id="jain-filter-btn">Jain Friendly Only</button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-card-grid" id="menu-grid-container">
+          <!-- Dynamically populated via main.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: RESERVATION & DATE BOOKING -->
+    <section class="section reservation-section" id="reservations">
+      <div class="container">
+        
+        <div class="reservation-split">
+          
+          <div>
+            <span class="section-label">Reservations</span>
+            <h2 class="reserve-pitch-title">Reserve Your Table in Advance.</h2>
+            <p class="reserve-pitch-body">
+              While we always welcome walk-ins, reservations ensure guaranteed seating for weekend evenings, intimate date nights, and group celebrations.
+            </p>
+
+            <div class="reserve-feature-list">
+              <div class="r-feat">
+                <span class="r-bullet"></span>
+                <div>
+                  <strong>Romantic Date Setup</strong>
+                  <span>Private booth with fairy lights, candlelit table, and custom welcome note.</span>
+                </div>
+              </div>
+              <div class="r-feat">
+                <span class="r-bullet"></span>
+                <div>
+                  <strong>Birthday & Group Celebrations</strong>
+                  <span>Party balloon cluster, dessert sparkler, and priority group seating.</span>
+                </div>
+              </div>
+              <div class="r-feat">
+                <span class="r-bullet"></span>
+                <div>
+                  <strong>Zero Prepayment Required</strong>
+                  <span>Instant confirmation sent straight to your WhatsApp.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="reservation-form-card">
+            <h3 class="form-title-h3">Table Request</h3>
+
+            <form id="reservation-form">
+              <div class="input-block">
+                <label for="res-name">Full Name</label>
+                <input type="text" id="res-name" required placeholder="e.g. Suryansh Jain" />
+              </div>
+
+              <div class="form-grid-2">
+                <div class="input-block">
+                  <label for="res-phone">WhatsApp Number</label>
+                  <input type="tel" id="res-phone" required placeholder="+91 96855 XXXXX" />
+                </div>
+                <div class="input-block">
+                  <label for="res-guests">Number of Guests</label>
+                  <select id="res-guests">
+                    <option value="2 Guests (Couple / Date)">2 Guests (Couple / Date)</option>
+                    <option value="1 Guest (Solo / Work)">1 Guest (Solo / Work)</option>
+                    <option value="3-4 Guests (Small Squad)">3-4 Guests (Small Squad)</option>
+                    <option value="5-8 Guests (Celebration)">5-8 Guests (Celebration)</option>
+                    <option value="9+ Guests (Large Party)">9+ Guests (Large Party)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="input-block">
+                  <label for="res-date">Date</label>
+                  <input type="date" id="res-date" required />
+                </div>
+                <div class="input-block">
+                  <label for="res-time">Time</label>
+                  <select id="res-time">
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="03:30 PM">03:30 PM</option>
+                    <option value="05:30 PM">05:30 PM</option>
+                    <option value="07:30 PM" selected>07:30 PM</option>
+                    <option value="09:30 PM">09:30 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-block">
+                <label for="res-setup">Table Arrangement</label>
+                <select id="res-setup">
+                  <option value="Standard Table (No Decor)">Standard Table (No Decor)</option>
+                  <option value="Romantic Date Setup (Fairy Lights + Rose Petals)">Romantic Date Setup (Fairy Lights + Rose Petals)</option>
+                  <option value="Birthday Bash Setup (Balloons + Sparkler Brownie)">Birthday Bash Setup (Balloons + Sparkler Brownie)</option>
+                  <option value="Anniversary Special Setup">Anniversary Special Setup</option>
+                </select>
+              </div>
+
+              <div class="input-block">
+                <label for="res-notes">Special Dietary / Dietary Notes</label>
+                <input type="text" id="res-notes" placeholder="e.g. Jain preparations, quiet corner booth" />
+              </div>
+
+              <button type="submit" class="btn btn-solid-dark btn-block">
+                <span>Confirm Reservation via WhatsApp</span>
+              </button>
+
+              <span class="form-helper">Instant confirmation sent to your phone. No booking fee.</span>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: PHOTO ESSAY (MOMENTS) -->
+    <section class="section photo-essay-section" id="gallery">
+      <div class="container">
+        
+        <div class="text-center">
+          <span class="section-label">Moments & Food</span>
+          <h2 class="section-headline">Life At The Throb</h2>
+          <p class="section-lead">
+            A small glimpse into the food, friends, and late-night memories made at our tables in Indore.
+          </p>
+        </div>
+
+        <div class="photo-essay-grid">
+          
+          <div class="essay-photo-item">
+            <img src="assets/images/artisan-pizza.jpg" alt="Freshly baked four cheese pizza at The Throb" loading="lazy" />
+            <div class="essay-caption">Four Cheese Volcano Pizza</div>
+          </div>
+
+          <div class="essay-photo-item">
+            <img src="assets/images/date-night-vibe.jpg" alt="Evening date table setup at The Throb" loading="lazy" />
+            <div class="essay-caption">Evening Candlelight Booth</div>
+          </div>
+
+          <div class="essay-photo-item">
+            <img src="assets/images/loaded-fries.jpg" alt="Loaded cheese and jalapeño fries" loading="lazy" />
+            <div class="essay-caption">Cheesy Jalapeño Fries Basket</div>
+          </div>
+
+          <div class="essay-photo-item">
+            <img src="assets/images/thick-shakes.jpg" alt="Nutella hazelnut freakshake" loading="lazy" />
+            <div class="essay-caption">Nutella Hazelnut Freakshake</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: LOCATION & HOURS -->
+    <section class="section location-section" id="location">
+      <div class="container">
+        
+        <div class="location-layout">
+          
+          <div>
+            <span class="section-label">Location & Hours</span>
+            <h2 class="section-headline">Drop In And Say Hello.</h2>
+            <p class="section-lead" style="margin-left: 0;">
+              Conveniently located in Indore with dedicated two-wheeler and four-wheeler parking spaces.
+            </p>
+
+            <div class="location-info-list">
+              <div class="loc-row">
+                <span class="loc-label">Address</span>
+                <span class="loc-val">The Throb Cafe, Indore, Madhya Pradesh</span>
+              </div>
+
+              <div class="loc-row">
+                <span class="loc-label">Timings</span>
+                <span class="loc-val">Monday to Sunday: 11:00 AM – 11:30 PM</span>
+              </div>
+
+              <div class="loc-row">
+                <span class="loc-label">Telephone</span>
+                <span class="loc-val"><a href="tel:+919685514326" class="text-terracotta">+91 96855 14326</a></span>
+              </div>
+
+              <div class="loc-row">
+                <span class="loc-label">Inquiries</span>
+                <span class="loc-val"><a href="mailto:customercare@thethrobcafe.in">customercare@thethrobcafe.in</a></span>
+              </div>
+            </div>
+
+            <div class="location-action-cluster">
+              <a href="https://maps.google.com/?q=The+Throb+Cafe+Indore" target="_blank" rel="noopener noreferrer" class="btn btn-solid-dark">
+                Get Directions on Maps
+              </a>
+              <a href="https://wa.me/919685514326" target="_blank" class="btn btn-outline-dark">
+                Message on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="location-photo-frame">
+            <img src="assets/images/cafe-cozy-vibe.jpg" alt="Interior of The Throb Cafe in Indore" />
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SLIDE-OVER ORDER TRAY (CART) -->
+  <div class="tray-overlay" id="tray-backdrop" aria-hidden="true"></div>
+  <aside class="tray-drawer-panel" id="tray-drawer" aria-label="Order Tray" aria-hidden="true">
+    <div class="tray-panel-header">
+      <h3>Your Food Tray</h3>
+      <button class="add-btn" id="close-tray-btn">Close ✕</button>
+    </div>
+
+    <div class="tray-panel-items" id="tray-items-container">
+      <p class="tray-empty-text">Your tray is currently empty. Explore our pizzas, burgers, and shakes to add items.</p>
+    </div>
+
+    <div class="tray-panel-footer" id="tray-panel-footer" style="display: none;">
+      <div class="tray-total-row">
+        <span>Estimated Total</span>
+        <span id="tray-total-amount">₹0</span>
+      </div>
+
+      <button class="btn btn-terracotta btn-block" id="tray-checkout-btn">
+        <span>Send Order to WhatsApp Counter</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        <div>
+          <h3 class="footer-logo-title">The Throb Cafe</h3>
+          <p class="footer-brand-text">
+            A sanctuary in Indore for good food, genuine warmth, and easy conversations. Dedicated to 100% vegetarian culinary quality and heartfelt hospitality.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-col">
+            <li><a href="#about">The Atmosphere</a></li>
+            <li><a href="#menu">Food & Beverage Menu</a></li>
+            <li><a href="#reservations">Table Booking</a></li>
+            <li><a href="#gallery">Moments Gallery</a></li>
+            <li><a href="#location">Find Our Cafe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links-col">
+            <li><a href="tel:+919685514326">+91 96855 14326</a></li>
+            <li><a href="mailto:customercare@thethrobcafe.in">customercare@thethrobcafe.in</a></li>
+            <li><a href="https://www.instagram.com/thethrobcafe" target="_blank">Instagram: @thethrobcafe</a></li>
+            <li><a href="https://www.facebook.com/thethrobcafe/" target="_blank">Facebook: /thethrobcafe</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-sub-bar">
+        <span>© 2026 The Throb Cafe · Indore, Madhya Pradesh. All rights reserved.</span>
+        <span>Pure Vegetarian & Jain Friendly Kitchen</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

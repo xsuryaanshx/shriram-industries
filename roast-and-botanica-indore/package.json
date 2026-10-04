@@ -1,0 +1,19 @@
+{
+  "name": "roast-and-botanica-indore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Artisanal Specialty Coffee Roastery, Sourdough Bakehouse & Greenhouse Bistro in Scheme 54, Vijay Nagar, Indore",
+  "scripts": {
+    "dev": "npx serve . -p 8086",
+    "start": "npx serve . -p 8086"
+  },
+  "keywords": [
+    "indore-cafe",
+    "specialty-coffee",
+    "roastery",
+    "artisan-bakery",
+    "vijay-nagar-indore"
+  ],
+  "author": "Antigravity Creative Studio",
+  "license": "MIT"
+}
