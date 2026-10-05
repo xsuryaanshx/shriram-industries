@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: './shriram-industries/package-lock.json'
 
       - name: Install dependencies
         working-directory: ./shriram-industries
@@ -42,6 +43,12 @@ jobs:
       - name: Copy index.html to 404.html for SPA routing
         working-directory: ./shriram-industries
         run: cp dist/index.html dist/404.html
+
+      - name: Copy client showcase sites
+        run: |
+          cp -r june-bakehouse shriram-industries/dist/june-bakehouse
+          cp -r roast-and-botanica-indore shriram-industries/dist/roast-and-botanica-indore || true
+          cp -r the-throb-cafe-indore shriram-industries/dist/the-throb-cafe-indore || true
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

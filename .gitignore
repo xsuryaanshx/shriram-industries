@@ -48,6 +48,7 @@ Thumbs.db
 
 # Other project directories & experiments
 jain-gaming-centre/
+the-neighbourhood-cafe/
 Controller/
 public/Controller/
 src/components/ControllerScrollSequence.tsx
