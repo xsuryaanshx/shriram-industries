@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────
 //  TransparentNavbar — Clean Architectural Navbar
-//  High contrast, crisp typography matching Shriram Industries
+//  Transparent over hero image, smoothly converts to solid on scroll
 // ─────────────────────────────────────────────
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -31,12 +31,19 @@ export default function TransparentNavbar({
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
+    const handleScroll = () => {
+      // On homepage, stay transparent while viewing the hero image, then turn solid past it
+      const threshold = isHome ? Math.max(window.innerHeight - 90, 200) : 40;
+      setScrolled(window.scrollY > threshold);
+    };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
   const [prevPathname, setPrevPathname] = useState(location.pathname);
   if (prevPathname !== location.pathname) {
@@ -53,14 +60,17 @@ export default function TransparentNavbar({
   const isActive = (href: string) =>
     href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
 
+  // When transparent (at top of hero on homepage), text is crisp white with subtle drop-shadow
+  const isTransparent = !scrolled && isHome;
+
   return (
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-xs'
-            : 'bg-white/90 backdrop-blur-sm border-b border-[var(--color-border)]/80'
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out',
+          isTransparent
+            ? 'bg-transparent border-b border-white/10'
+            : 'bg-white/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-xs'
         )}
         role="banner"
       >
@@ -75,7 +85,14 @@ export default function TransparentNavbar({
               className="flex items-center gap-2 focus-visible:ring-0 group"
               aria-label={`${logoText} — home`}
             >
-              <span className="font-sans text-xl md:text-2xl font-bold tracking-tight text-[var(--color-foreground)] transition-colors">
+              <span
+                className={cn(
+                  'font-sans text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300',
+                  isTransparent
+                    ? 'text-white drop-shadow-xs'
+                    : 'text-[var(--color-foreground)]'
+                )}
+              >
                 {logoText}
               </span>
             </Link>
@@ -87,9 +104,11 @@ export default function TransparentNavbar({
                   <Link
                     to={link.href}
                     className={cn(
-                      'text-sm font-medium tracking-normal transition-colors duration-200 relative group py-1',
+                      'text-sm font-medium tracking-normal transition-colors duration-300 relative group py-1',
                       isActive(link.href)
                         ? 'text-[var(--color-accent)] font-semibold'
+                        : isTransparent
+                        ? 'text-white/85 hover:text-white drop-shadow-xs'
                         : 'text-[var(--color-foreground)]/80 hover:text-[var(--color-foreground)]'
                     )}
                     aria-current={isActive(link.href) ? 'page' : undefined}
@@ -110,13 +129,23 @@ export default function TransparentNavbar({
             <div className="flex items-center gap-4">
               <Link
                 to={ctaHref}
-                className="hidden md:inline-flex items-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider bg-[var(--color-foreground)] text-white hover:bg-[var(--color-accent)] transition-all duration-300 rounded-none shadow-xs"
+                className={cn(
+                  'hidden md:inline-flex items-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-xs',
+                  isTransparent
+                    ? 'border border-white/50 text-white bg-white/10 backdrop-blur-xs hover:bg-white hover:text-[var(--color-foreground)]'
+                    : 'bg-[var(--color-foreground)] text-white hover:bg-[var(--color-accent)]'
+                )}
               >
                 {ctaLabel}
               </Link>
 
               <button
-                className="md:hidden p-2 text-[var(--color-foreground)] hover:text-[var(--color-accent)] transition-colors cursor-pointer"
+                className={cn(
+                  'md:hidden p-2 transition-colors cursor-pointer',
+                  isTransparent
+                    ? 'text-white hover:text-[var(--color-accent)]'
+                    : 'text-[var(--color-foreground)] hover:text-[var(--color-accent)]'
+                )}
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={menuOpen}
@@ -138,7 +167,7 @@ export default function TransparentNavbar({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed inset-0 z-40 bg-[var(--color-background)] flex flex-col"
+            className="fixed inset-0 z-50 bg-[var(--color-background)] flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
@@ -147,7 +176,7 @@ export default function TransparentNavbar({
             <div className="container-ami flex justify-end pt-5">
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-2 text-[var(--color-foreground)]"
+                className="p-2 text-[var(--color-foreground)] cursor-pointer"
                 aria-label="Close menu"
               >
                 <X size={24} />

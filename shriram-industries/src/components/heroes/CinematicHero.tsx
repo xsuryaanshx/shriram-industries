@@ -103,6 +103,15 @@ export default function CinematicHero({
         aria-hidden="true"
       />
 
+      {/* Top vignette — provides crisp contrast for the transparent navbar while viewing the hero image */}
+      <div
+        className="absolute inset-x-0 top-0 h-44 pointer-events-none z-[1]"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(15,17,20,0.72) 0%, rgba(15,17,20,0.30) 60%, transparent 100%)',
+        }}
+        aria-hidden="true"
+      />
+
       {/* Content */}
       <div className="relative z-10 container-ami pb-16 md:pb-24 w-full">
         <motion.div
