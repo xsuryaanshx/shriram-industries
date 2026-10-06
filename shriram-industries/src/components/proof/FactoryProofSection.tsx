@@ -1,9 +1,9 @@
 // ─────────────────────────────────────────────
 //  FactoryProofSection.tsx
-//  Raw Factory Proof & Micro-Demos (Unshakable Trust)
+//  Polo Ground Factory Proof & Micro-Demos
 // ─────────────────────────────────────────────
 import { useState } from 'react';
-import { ShieldCheck, Award, Flame, Gauge, CheckCircle2, Factory } from 'lucide-react';
+import { ShieldCheck, Award, Flame, Gauge, CheckCircle2 } from 'lucide-react';
 
 interface ProofDemo {
   id: string;
@@ -37,7 +37,7 @@ const PROOF_DEMOS: ProofDemo[] = [
     metric: '96 Hrs',
     metricLabel: 'Neutral Salt Spray Pass',
     description:
-      'AISI 304 food-grade formulation undergoes rigorous salt fog and organic acid exposure. Zero rust spotting, pitting, or wire weld joint discoloration in humid, turmeric, and Indian spice vapor environments.',
+      'AISI 304 food-grade formulation undergoes rigorous salt fog and organic acid exposure. Zero rust spotting, pitting, or wire weld joint discoloration in humid Indian cooking environments.',
     testStandard: 'ASTM B117 Neutral Salt Spray Protocol',
     icon: ShieldCheck,
     accentColor: '#10b981',
@@ -52,7 +52,7 @@ const PROOF_DEMOS: ProofDemo[] = [
       'Automated CNC wire forming joined by high-frequency argon TIG welds. Mirror electro-chemical polishing ensures zero sharp wire burrs to snag delicate cloth, hands, or kitchenware.',
     testStandard: 'Manufactured at Polo Ground Industrial Plant',
     icon: Flame,
-    accentColor: '#3b82f6',
+    accentColor: '#60a5fa',
   },
 ];
 
@@ -62,19 +62,18 @@ export default function FactoryProofSection() {
   const selected = PROOF_DEMOS.find((d) => d.id === activeDemo) || PROOF_DEMOS[0];
 
   return (
-    <section id="factory-proof" className="py-20 bg-zinc-950 text-white relative overflow-hidden" aria-labelledby="proof-heading">
-      <div className="container-ami relative z-10">
+    <section id="factory-proof" className="py-20 bg-[#1a1d21] text-white" aria-labelledby="proof-heading">
+      <div className="container-ami">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-[var(--color-accent)] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Factory size={13} />
-            Raw Manufacturing Proof · Polo Ground, Indore
-          </div>
-          <h2 id="proof-heading" className="text-3xl md:text-4xl font-bold tracking-tight">
+        <div className="max-w-3xl mb-12">
+          <p className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] uppercase mb-3">
+            Polo Ground Factory Engineering
+          </p>
+          <h2 id="proof-heading" className="heading-lg text-white">
             Engineered to Outlast the House
           </h2>
-          <p className="text-gray-400 text-sm md:text-base mt-3 max-w-2xl mx-auto">
-            We don’t just assemble imported knock-offs. Every basket, runner, and carousel unit is tool-welded and stress-tested inside our Indore facility since 1991.
+          <p className="text-white/65 text-sm md:text-base mt-3 max-w-xl leading-relaxed">
+            Every basket, runner, and carousel unit is tool-welded and stress-tested inside our Indore facility since 1991.
           </p>
         </div>
 
@@ -88,28 +87,28 @@ export default function FactoryProofSection() {
                 key={demo.id}
                 type="button"
                 onClick={() => setActiveDemo(demo.id)}
-                className={`p-5 rounded-2xl border text-left transition-all ${
+                className={`p-5 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'border-[var(--color-accent)] bg-zinc-900 shadow-xl'
-                    : 'border-white/10 bg-zinc-900/40 hover:bg-zinc-900/70 hover:border-white/20'
+                    ? 'border-[var(--color-accent)] bg-white/10 shadow-md'
+                    : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/20'
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[0.65rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                    isSelected ? 'bg-[var(--color-accent)] text-white' : 'bg-white/10 text-gray-400'
+                  <span className={`text-[0.65rem] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full ${
+                    isSelected ? 'bg-[var(--color-accent)] text-white' : 'bg-white/10 text-white/70'
                   }`}>
                     {demo.badge}
                   </span>
                   <Icon size={18} style={{ color: demo.accentColor }} />
                 </div>
-                <h3 className="text-sm font-bold text-white mb-1 line-clamp-1">
+                <h3 className="text-sm font-semibold text-white mb-1">
                   {demo.title}
                 </h3>
                 <div className="flex items-baseline gap-2 mt-2">
-                  <span className="text-xl font-extrabold text-white" style={{ color: isSelected ? demo.accentColor : 'white' }}>
+                  <span className="text-xl font-bold" style={{ color: isSelected ? demo.accentColor : '#ffffff' }}>
                     {demo.metric}
                   </span>
-                  <span className="text-[0.65rem] text-gray-400">{demo.metricLabel}</span>
+                  <span className="text-[0.68rem] text-white/50">{demo.metricLabel}</span>
                 </div>
               </button>
             );
@@ -117,56 +116,56 @@ export default function FactoryProofSection() {
         </div>
 
         {/* Dynamic Detail Showcase Card */}
-        <div className="bg-zinc-900 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[var(--color-accent)]">
               <Award size={14} />
-              <span>{selected.badge} · Factory Verification</span>
+              <span>{selected.badge} · Quality Assurance</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-medium text-white tracking-tight">
               {selected.title}
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/75 text-sm sm:text-base leading-relaxed">
               {selected.description}
             </p>
 
-            <div className="pt-3 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs text-gray-400">
-              <span className="inline-flex items-center gap-1.5 text-green-400 font-medium">
+            <div className="pt-3 border-t border-white/10 flex flex-wrap items-center gap-4 text-xs text-white/60">
+              <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
                 <CheckCircle2 size={15} />
                 {selected.testStandard}
               </span>
               <span>•</span>
-              <span className="text-gray-300">
+              <span className="text-white/80">
                 Polo Ground Factory Batch Certified
               </span>
             </div>
           </div>
 
-          {/* Simulated Visual Proof Graphic / Animation */}
-          <div className="lg:col-span-5 bg-zinc-950 border border-white/10 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[220px]">
-            <div className="flex items-center justify-between text-xs text-gray-400 pb-3 border-b border-white/10">
-              <span className="font-mono">BENCH_TEST: {selected.id.toUpperCase()}</span>
-              <span className="flex items-center gap-1 text-green-400">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                LIVE SPEC
+          {/* Metric Panel */}
+          <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 rounded-xl p-6 flex flex-col justify-between min-h-[200px]">
+            <div className="flex items-center justify-between text-xs text-white/50 pb-3 border-b border-white/10 font-mono">
+              <span>TEST: {selected.id.toUpperCase()}</span>
+              <span className="flex items-center gap-1 text-emerald-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                VERIFIED
               </span>
             </div>
 
-            <div className="py-6 text-center space-y-2">
-              <div className="text-4xl sm:text-5xl font-black tracking-tight" style={{ color: selected.accentColor }}>
+            <div className="py-6 text-center space-y-1.5">
+              <div className="text-4xl sm:text-5xl font-light text-white" style={{ color: selected.accentColor }}>
                 {selected.metric}
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-300 font-semibold">
+              <div className="text-xs uppercase tracking-wider text-white/70 font-medium">
                 {selected.metricLabel}
               </div>
-              <p className="text-[0.7rem] text-gray-400 max-w-xs mx-auto">
+              <p className="text-[0.7rem] text-white/50 max-w-xs mx-auto">
                 Continuous inspection performed on every batch before regional dispatch across MP.
               </p>
             </div>
 
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[0.65rem] text-gray-500">
-              <span>Origin: Shriram Industries (Indore)</span>
-              <span>Grade: AISI 202 & 304 Certified</span>
+            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[0.65rem] text-white/40">
+              <span>Shriram Industries (Indore)</span>
+              <span>AISI 202 & 304 Certified</span>
             </div>
           </div>
         </div>

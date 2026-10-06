@@ -1,9 +1,9 @@
 // ─────────────────────────────────────────────
 //  GradeBudgetSelector.tsx
-//  The "Select Your Grade & Budget" Interactive Quote Tool
+//  Clean Architectural Quote Estimator
 // ─────────────────────────────────────────────
 import { useState } from 'react';
-import { Calculator, Check, MessageSquare, ArrowRight, Building, Crown, Wrench } from 'lucide-react';
+import { Check, MessageSquare, ArrowRight, Building, Crown, Wrench } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
 interface HardwareItem {
@@ -82,43 +82,44 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
   return (
     <section id="quote-selector" className="py-20 bg-[var(--color-background)] border-b border-[var(--color-border)]" aria-labelledby="selector-heading">
       <div className="container-ami">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--color-accent-subtle,rgba(243,133,36,0.1))] text-[var(--color-accent)] text-xs font-semibold uppercase tracking-wider mb-3">
-            <Calculator size={13} />
-            Interactive Hardware Estimator
-          </div>
-          <h2 id="selector-heading" className="heading-xl text-[var(--color-foreground)]">
+        <div className="max-w-3xl mb-12">
+          <p className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] uppercase mb-3">
+            Hardware Estimator
+          </p>
+          <h2 id="selector-heading" className="heading-lg text-[var(--color-foreground)]">
             Select Your Grade & Budget
           </h2>
-          <p className="text-[var(--color-muted)] text-sm md:text-base mt-3 max-w-xl mx-auto">
-            Get transparent factory estimates tailored whether you need economical high-volume SS202 for apartment projects or lifetime rust-proof SS304.
+          <p className="text-[var(--color-muted)] text-sm md:text-base mt-3 max-w-xl leading-relaxed">
+            Get transparent factory estimates tailored whether you need economical high-volume SS 202 for apartment projects or lifetime rust-proof SS 304.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white dark:bg-zinc-900 border border-[var(--color-border)] rounded-3xl p-6 sm:p-10 shadow-xl">
+        <div className="bg-white border border-[var(--color-border)] rounded-2xl p-6 sm:p-10 shadow-xs">
           {/* Step 1: Grade Cards */}
-          <div className="mb-8">
-            <label className="block text-xs font-bold uppercase tracking-wider text-[var(--color-foreground)] mb-3">
-              Step 1: Choose Steel Grade / Purpose
-            </label>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="mb-10">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-label text-[0.65rem] text-[var(--color-muted)] tracking-[0.14em] uppercase font-semibold">
+                Step 1: Choose Steel Grade / Purpose
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* SS 202 Card */}
               <button
                 type="button"
                 onClick={() => setSelectedGrade('ss202')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
+                className={`p-5 rounded-xl border text-left transition-all cursor-pointer ${
                   selectedGrade === 'ss202'
-                    ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-950/20 shadow-md ring-2 ring-blue-500/20'
-                    : 'border-[var(--color-border)] hover:border-gray-400 bg-transparent'
+                    ? 'border-blue-600 bg-blue-50/50 shadow-xs ring-1 ring-blue-600'
+                    : 'border-[var(--color-border)] hover:border-gray-400 bg-white'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-extrabold text-blue-600 dark:text-blue-400">SS 202 Commercial</span>
-                  <Building size={16} className="text-blue-500" />
+                  <span className="text-xs font-bold text-blue-700 tracking-wide uppercase">SS 202 Commercial</span>
+                  <Building size={16} className="text-blue-600" />
                 </div>
-                <div className="text-xs font-bold text-[var(--color-foreground)]">Best For: Bulk & Builder Projects</div>
-                <p className="text-[0.68rem] text-[var(--color-muted)] mt-1 leading-snug">
-                  Cost-effective, high-tensile wire baskets for budget modular kitchens, rentals, and commercial apartments.
+                <div className="text-sm font-semibold text-[var(--color-foreground)]">Best for: Bulk & Builders</div>
+                <p className="text-xs text-[var(--color-muted)] mt-1.5 leading-relaxed">
+                  High-tensile, cost-effective wire baskets designed for budget modular kitchens and commercial apartments.
                 </p>
               </button>
 
@@ -126,18 +127,18 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
               <button
                 type="button"
                 onClick={() => setSelectedGrade('ss304')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
+                className={`p-5 rounded-xl border text-left transition-all cursor-pointer ${
                   selectedGrade === 'ss304'
-                    ? 'border-[var(--color-accent)] bg-orange-50/50 dark:bg-orange-950/20 shadow-md ring-2 ring-orange-500/20'
-                    : 'border-[var(--color-border)] hover:border-gray-400 bg-transparent'
+                    ? 'border-[var(--color-accent)] bg-orange-50/50 shadow-xs ring-1 ring-[var(--color-accent)]'
+                    : 'border-[var(--color-border)] hover:border-gray-400 bg-white'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-extrabold text-[var(--color-accent)]">SS 304 Premium</span>
+                  <span className="text-xs font-bold text-[var(--color-accent)] tracking-wide uppercase">SS 304 Premium</span>
                   <Crown size={16} className="text-[var(--color-accent)]" />
                 </div>
-                <div className="text-xs font-bold text-[var(--color-foreground)]">Best For: Luxury & Architects</div>
-                <p className="text-[0.68rem] text-[var(--color-muted)] mt-1 leading-snug">
+                <div className="text-sm font-semibold text-[var(--color-foreground)]">Best for: Luxury & Architects</div>
+                <p className="text-xs text-[var(--color-muted)] mt-1.5 leading-relaxed">
                   100% food-grade stainless steel with lifetime zero-rust guarantee. Mirror electro-polish finish.
                 </p>
               </button>
@@ -146,18 +147,18 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
               <button
                 type="button"
                 onClick={() => setSelectedGrade('custom')}
-                className={`p-4 rounded-2xl border text-left transition-all ${
+                className={`p-5 rounded-xl border text-left transition-all cursor-pointer ${
                   selectedGrade === 'custom'
-                    ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 shadow-md ring-2 ring-emerald-500/20'
-                    : 'border-[var(--color-border)] hover:border-gray-400 bg-transparent'
+                    ? 'border-emerald-600 bg-emerald-50/50 shadow-xs ring-1 ring-emerald-600'
+                    : 'border-[var(--color-border)] hover:border-gray-400 bg-white'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">Custom Size / OEM</span>
-                  <Wrench size={16} className="text-emerald-500" />
+                  <span className="text-xs font-bold text-emerald-700 tracking-wide uppercase">Custom Size / OEM</span>
+                  <Wrench size={16} className="text-emerald-600" />
                 </div>
-                <div className="text-xs font-bold text-[var(--color-foreground)]">Odd Sizes & Bespoke Fit</div>
-                <p className="text-[0.68rem] text-[var(--color-muted)] mt-1 leading-snug">
+                <div className="text-sm font-semibold text-[var(--color-foreground)]">Odd Sizes & Bespoke Fit</div>
+                <p className="text-xs text-[var(--color-muted)] mt-1.5 leading-relaxed">
                   Made-to-order dimensions (17″, 19″, 22″) welded inside our Polo Ground factory within 48–72 hours.
                 </p>
               </button>
@@ -165,11 +166,11 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
           </div>
 
           {/* Step 2: Select Hardware Items */}
-          <div className="mb-8">
-            <label className="block text-xs font-bold uppercase tracking-wider text-[var(--color-foreground)] mb-3">
+          <div className="mb-10">
+            <span className="text-label text-[0.65rem] text-[var(--color-muted)] tracking-[0.14em] uppercase font-semibold block mb-4">
               Step 2: Select Required Fittings ({selectedItems.length} selected)
-            </label>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {HARDWARE_ITEMS.map((item) => {
                 const isChecked = selectedItems.includes(item.id);
                 return (
@@ -177,24 +178,24 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
                     key={item.id}
                     type="button"
                     onClick={() => toggleItem(item.id)}
-                    className={`flex items-center justify-between p-3 rounded-xl border text-left text-xs transition-all ${
+                    className={`flex items-center justify-between p-3.5 rounded-xl border text-left text-xs transition-all cursor-pointer ${
                       isChecked
-                        ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle,rgba(243,133,36,0.06))] text-[var(--color-foreground)] font-medium'
-                        : 'border-[var(--color-border)] text-gray-600 dark:text-gray-400 hover:border-gray-400'
+                        ? 'border-[var(--color-accent)] bg-orange-50/30'
+                        : 'border-[var(--color-border)] hover:border-gray-300 bg-white'
                     }`}
                   >
                     <div>
-                      <div className="font-semibold text-[var(--color-foreground)]">{item.name}</div>
-                      <div className="text-[0.65rem] text-[var(--color-muted)]">{item.category}</div>
+                      <div className="font-medium text-[var(--color-foreground)] text-sm">{item.name}</div>
+                      <div className="text-[0.7rem] text-[var(--color-muted)] mt-0.5">{item.category}</div>
                     </div>
                     <div
-                      className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 ${
+                      className={`w-5 h-5 rounded-md flex items-center justify-center border shrink-0 transition-colors ${
                         isChecked
                           ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-white'
-                          : 'border-gray-300 dark:border-zinc-700'
+                          : 'border-gray-300 bg-white'
                       }`}
                     >
-                      {isChecked && <Check size={12} strokeWidth={3} />}
+                      {isChecked && <Check size={13} strokeWidth={2.5} />}
                     </div>
                   </button>
                 );
@@ -203,11 +204,11 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
           </div>
 
           {/* Step 3: Project Volume / Slab */}
-          <div className="mb-8">
-            <label className="block text-xs font-bold uppercase tracking-wider text-[var(--color-foreground)] mb-2">
+          <div className="mb-10">
+            <span className="text-label text-[0.65rem] text-[var(--color-muted)] tracking-[0.14em] uppercase font-semibold block mb-4">
               Step 3: Select Project Scale / Volume
-            </label>
-            <div className="grid grid-cols-3 gap-2">
+            </span>
+            <div className="grid grid-cols-3 gap-3">
               {(
                 [
                   { id: 'retail', label: '1–2 Kitchens', sub: 'Home / Villa' },
@@ -219,41 +220,41 @@ Please share the factory rate card & discount slabs for Indore / MP dispatch.`;
                   key={slab.id}
                   type="button"
                   onClick={() => setQuantitySlab(slab.id)}
-                  className={`p-2.5 rounded-xl border text-center transition-all ${
+                  className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
                     quantitySlab === slab.id
-                      ? 'border-[var(--color-foreground)] bg-gray-100 dark:bg-zinc-800 font-bold'
-                      : 'border-[var(--color-border)] text-gray-500 hover:border-gray-400'
+                      ? 'border-[var(--color-foreground)] bg-zinc-100 shadow-xs font-semibold'
+                      : 'border-[var(--color-border)] hover:border-gray-300 bg-white'
                   }`}
                 >
-                  <div className="text-xs text-[var(--color-foreground)]">{slab.label}</div>
-                  <div className="text-[0.65rem] text-[var(--color-muted)]">{slab.sub}</div>
+                  <div className="text-xs sm:text-sm text-[var(--color-foreground)] font-medium">{slab.label}</div>
+                  <div className="text-[0.65rem] text-[var(--color-muted)] mt-0.5">{slab.sub}</div>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Quote Summary Banner & Action */}
-          <div className="p-5 bg-gradient-to-r from-zinc-900 to-zinc-800 text-white rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* Quote Summary Banner */}
+          <div className="p-6 bg-[#1a1d21] text-white rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <div>
-              <div className="text-[0.65rem] uppercase tracking-wider text-[var(--color-accent)] font-bold">
+              <div className="text-label text-[0.6rem] text-[var(--color-accent)] tracking-[0.2em] uppercase font-semibold">
                 Configured Specification Summary
               </div>
-              <div className="text-sm sm:text-base font-bold mt-0.5">
+              <div className="text-base sm:text-lg font-medium text-white mt-1">
                 {getGradeName()} · {getSlabLabel()}
               </div>
-              <div className="text-xs text-gray-300 mt-1">
-                {selectedItems.length} fittings chosen · Direct factory wholesale pricing
+              <div className="text-xs text-white/65 mt-0.5">
+                {selectedItems.length} fittings chosen · Direct factory wholesale pricing from Polo Ground, Indore
               </div>
             </div>
 
             <button
               type="button"
               onClick={handleSendWhatsAppQuote}
-              className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-medium text-xs sm:text-sm rounded-xl shadow-lg transition-all"
+              className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-medium text-xs tracking-wider uppercase rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
-              <MessageSquare size={17} className="fill-white/20" />
-              <span>Get Instant Factory Quote on WhatsApp</span>
-              <ArrowRight size={15} />
+              <MessageSquare size={16} className="fill-white/20" />
+              <span>Get Factory Quote on WhatsApp</span>
+              <ArrowRight size={14} />
             </button>
           </div>
         </div>

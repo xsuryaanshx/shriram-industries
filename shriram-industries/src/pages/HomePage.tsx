@@ -80,16 +80,6 @@ export default function HomePage() {
         onScrollToCustom={() => scrollTo('custom-fab-heading')}
       />
 
-      {/* ── 1. The "Select Your Grade & Budget" Interactive Quote Tool ── */}
-      <GradeBudgetSelector
-        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
-      />
-
-      {/* ── 2. Their Biggest Unfair Advantage: Custom Size Fabrication ── */}
-      <CustomFabricationBanner
-        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
-      />
-
       {/* ── Featured Products ────────────────────── */}
       <section id="featured-products" aria-labelledby="featured-heading">
         <div className="container-ami py-14 md:py-16">
@@ -156,6 +146,16 @@ export default function HomePage() {
           </motion.div>
         </section>
       )}
+
+      {/* ── 1. The "Select Your Grade & Budget" Interactive Quote Tool ── */}
+      <GradeBudgetSelector
+        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
+      />
+
+      {/* ── 2. Their Biggest Unfair Advantage: Custom Size Fabrication ── */}
+      <CustomFabricationBanner
+        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
+      />
 
       {/* ── About ────────────────────────────────── */}
       <AboutSection
