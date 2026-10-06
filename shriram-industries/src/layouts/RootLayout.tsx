@@ -2,33 +2,47 @@
 //  RootLayout — wraps all pages with nav + footer + floating quick contact
 // ─────────────────────────────────────────────
 import { Outlet, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Phone } from 'lucide-react';
 import TransparentNavbar from '@/components/navigation/TransparentNavbar';
 import ContactFooter from '@/components/footer/ContactFooter';
+import WhatsAppCatalogModal from '@/components/funnel/WhatsAppCatalogModal';
 import { siteConfig } from '@/config/site';
 
 export default function RootLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+  const [modalRole, setModalRole] = useState('architect');
+  const [modalGrade, setModalGrade] = useState('both');
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
+  // Global event listener so any page can open the catalog modal with pre-set role/grade
+  useEffect(() => {
+    const handleOpenCatalog = (e: Event) => {
+      const customEvent = e as CustomEvent<{ role?: string; grade?: string }>;
+      if (customEvent.detail?.role) setModalRole(customEvent.detail.role);
+      if (customEvent.detail?.grade) setModalGrade(customEvent.detail.grade);
+      setIsCatalogOpen(true);
+    };
+
+    window.addEventListener('open-catalog-modal', handleOpenCatalog);
+    return () => window.removeEventListener('open-catalog-modal', handleOpenCatalog);
+  }, []);
+
   const cleanPhone = siteConfig.contact.phone?.replace(/[^0-9]/g, '') || '918047639215';
-  const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(
-    'Hello Shriram Industries! I am visiting your website and would like to inquire about modular kitchen hardware products.'
-  )}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-background)]">
       <TransparentNavbar
         dark={isHome}
-        ctaLabel="Get a Quote"
-        ctaHref="/contact"
+        ctaLabel="Get Wholesale Quote"
+        ctaHref="#quote-selector"
       />
 
       <main id="main-content" className="flex-1">
@@ -47,6 +61,14 @@ export default function RootLayout() {
 
       <ContactFooter />
 
+      {/* 1-Tap Catalog & Lead Funnel Modal */}
+      <WhatsAppCatalogModal
+        isOpen={isCatalogOpen}
+        onClose={() => setIsCatalogOpen(false)}
+        defaultRole={modalRole}
+        defaultGrade={modalGrade}
+      />
+
       {/* Floating Quick Actions (WhatsApp & Phone) */}
       <aside
         aria-label="Quick contact actions"
@@ -61,23 +83,25 @@ export default function RootLayout() {
           <Phone size={18} />
         </a>
 
-        {/* WhatsApp Floating Action Button */}
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-xl hover:bg-[#20ba59] hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-95"
-          aria-label="Chat with Shriram Industries on WhatsApp"
+        {/* WhatsApp Floating Action Button -> Launches Category & Catalog Funnel */}
+        <button
+          type="button"
+          onClick={() => {
+            setModalRole('dealer');
+            setIsCatalogOpen(true);
+          }}
+          className="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] text-white rounded-full shadow-xl hover:bg-[#20ba59] hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer"
+          aria-label="Get Wholesale Catalog on WhatsApp"
         >
           <MessageCircle size={20} className="fill-white/20" />
-          <span className="hidden sm:inline text-xs font-medium tracking-wide">
-            Chat on WhatsApp
+          <span className="hidden sm:inline text-xs font-semibold tracking-wide">
+            Wholesale Catalog on WhatsApp
           </span>
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
           </span>
-        </a>
+        </button>
       </aside>
     </div>
   );

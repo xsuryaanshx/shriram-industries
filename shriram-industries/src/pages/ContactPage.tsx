@@ -282,12 +282,12 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 border border-[var(--color-border)] bg-[var(--color-background)] text-[var(--color-foreground)] text-sm focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none"
                       >
                         <option value="">Select enquiry type</option>
-                        <option value="dealership">Dealership / Distributorship</option>
-                        <option value="bulk-oem">OEM / Bulk Manufacturer Order</option>
-                        <option value="modular-kitchen">Modular Kitchen Baskets & Hardware</option>
-                        <option value="wardrobe">Wardrobe & Storage Systems</option>
-                        <option value="custom-ss">Custom Stainless Steel Fabrication</option>
-                        <option value="catalog">Catalogue & Sample Request</option>
+                        <option value="ss202-bulk">SS 202 Commercial / Builder Bulk Supply</option>
+                        <option value="ss304-architect">SS 304 Premium Architectural Specification</option>
+                        <option value="custom-odd-size">Custom Odd-Size Fabrication (17″, 19″, 21″, etc.)</option>
+                        <option value="layout-boq">Free Kitchen Layout BOQ & Hardware Estimate</option>
+                        <option value="dealership">Dealership / Distributorship (Indore & MP)</option>
+                        <option value="architect-sample">Architect Sample Kit & 2024 Trade Catalog</option>
                       </select>
                     </div>
                   </div>

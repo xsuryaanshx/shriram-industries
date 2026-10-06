@@ -7,6 +7,12 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import SEO from '@/components/ui/SEO';
 import CinematicHero from '@/components/heroes/CinematicHero';
+import QuickFunnelBar from '@/components/funnel/QuickFunnelBar';
+import GradeBudgetSelector from '@/components/calculator/GradeBudgetSelector';
+import CustomFabricationBanner from '@/components/features/CustomFabricationBanner';
+import HardwareComparisonSection from '@/components/comparison/HardwareComparisonSection';
+import FactoryProofSection from '@/components/proof/FactoryProofSection';
+import KitchenLayoutUploadSection from '@/components/funnel/KitchenLayoutUploadSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
@@ -24,11 +30,23 @@ import {
 } from '@/data/shriram';
 import { staggerContainer, staggerItem, fadeUp } from '@/animations/motion/variants';
 
-
 const featuredProjects = products.filter((p) => p.featured);
 const gridProjects = products.filter((p) => !p.featured).slice(0, 3);
 
 export default function HomePage() {
+  const handleOpenCatalogModal = (role = 'dealer', grade = 'both') => {
+    window.dispatchEvent(
+      new CustomEvent('open-catalog-modal', { detail: { role, grade } })
+    );
+  };
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <SEO
@@ -41,11 +59,11 @@ export default function HomePage() {
 
       {/* ── Hero ────────────────────────────────── */}
       <CinematicHero
-        label="Since 1991 · Indore, MP"
-        headline={siteConfig.tagline}
-        subline="Manufacturer of premium stainless steel kitchen baskets, telescopic channels, carousel units, and modular kitchen hardware. Trusted by 5000+ customers across India."
+        label="Since 1991 · Polo Ground, Indore"
+        headline="SS 304 & SS 202 Kitchen Hardware Built for Generations."
+        subline="Direct factory manufacturer of heavy-duty kitchen baskets, telescopic channels, tandem boxes, and custom-fabricated odd-size wire fittings across Central India."
         primaryCta={{ label: 'Explore Products', href: '/projects' }}
-        secondaryCta={{ label: 'Get a Quote', href: '/contact' }}
+        secondaryCta={{ label: 'Get Wholesale Quote', href: '#quote-selector' }}
         imageSrc="/images/products/kitchen-hero.jpg"
         imageAlt="Shriram Industries — Premium modular kitchen hardware"
         scrollTarget="featured-products"
@@ -53,6 +71,24 @@ export default function HomePage() {
 
       {/* ── Stats strip ─────────────────────────── */}
       <StatsSection stats={stats} />
+
+      {/* ── Sticky Quick Funnel Strip (1-Tap Catalog & Quotes) ── */}
+      <QuickFunnelBar
+        onOpenCatalogModal={(role) => handleOpenCatalogModal(role, 'both')}
+        onScrollToBOQ={() => scrollTo('layout-quote')}
+        onScrollToSelector={() => scrollTo('quote-selector')}
+        onScrollToCustom={() => scrollTo('custom-fab-heading')}
+      />
+
+      {/* ── 1. The "Select Your Grade & Budget" Interactive Quote Tool ── */}
+      <GradeBudgetSelector
+        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
+      />
+
+      {/* ── 2. Their Biggest Unfair Advantage: Custom Size Fabrication ── */}
+      <CustomFabricationBanner
+        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
+      />
 
       {/* ── Featured Products ────────────────────── */}
       <section id="featured-products" aria-labelledby="featured-heading">
@@ -136,6 +172,17 @@ export default function HomePage() {
         title="What We Offer"
         subtitle="From individual kitchen baskets to complete modular kitchen hardware supply chains — we've got your kitchen covered."
       />
+
+      {/* ── 3. Interactive Comparison Table (SS304/202 vs Competition) ── */}
+      <HardwareComparisonSection
+        onOpenWhatsApp={(role, grade) => handleOpenCatalogModal(role, grade)}
+      />
+
+      {/* ── 4. Raw Factory Proof & Micro-Demos ── */}
+      <FactoryProofSection />
+
+      {/* ── 5. Send Layout for Free Hardware BOQ (2-Hour Turnaround) ── */}
+      <KitchenLayoutUploadSection />
 
       {/* ── Process ──────────────────────────────── */}
       <ProcessSection
