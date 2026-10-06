@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────
-//  TransparentNavbar — Premium transparent nav
-//  that becomes solid on scroll
+//  TransparentNavbar — Clean Architectural Navbar
+//  High contrast, crisp typography matching Shriram Industries
 // ─────────────────────────────────────────────
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -24,17 +24,16 @@ interface TransparentNavbarProps {
 
 export default function TransparentNavbar({
   links = siteConfig.nav ?? [],
-  ctaLabel = 'Start a Project',
+  ctaLabel = 'Get a Quote',
   ctaHref = '/contact',
   logoText = siteConfig.businessName,
-  dark = false,
 }: TransparentNavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -58,11 +57,10 @@ export default function TransparentNavbar({
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'bg-[var(--color-background)]/95 backdrop-blur-sm border-b border-[var(--color-border)]'
-            : 'bg-transparent',
-          dark && !scrolled && 'text-white'
+            ? 'bg-white/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-xs'
+            : 'bg-white/90 backdrop-blur-sm border-b border-[var(--color-border)]/80'
         )}
         role="banner"
       >
@@ -77,12 +75,7 @@ export default function TransparentNavbar({
               className="flex items-center gap-2 focus-visible:ring-0 group"
               aria-label={`${logoText} — home`}
             >
-              <span
-                className={cn(
-                  'font-serif text-lg md:text-xl font-light tracking-wide transition-colors duration-300',
-                  scrolled || !dark ? 'text-[var(--color-foreground)]' : 'text-white'
-                )}
-              >
+              <span className="font-sans text-xl md:text-2xl font-bold tracking-tight text-[var(--color-foreground)] transition-colors">
                 {logoText}
               </span>
             </Link>
@@ -94,19 +87,17 @@ export default function TransparentNavbar({
                   <Link
                     to={link.href}
                     className={cn(
-                      'text-label text-[0.7rem] transition-colors duration-200 relative group',
+                      'text-sm font-medium tracking-normal transition-colors duration-200 relative group py-1',
                       isActive(link.href)
-                        ? 'text-[var(--color-accent)]'
-                        : scrolled || !dark
-                        ? 'text-[var(--color-muted)] hover:text-[var(--color-foreground)]'
-                        : 'text-white/70 hover:text-white'
+                        ? 'text-[var(--color-accent)] font-semibold'
+                        : 'text-[var(--color-foreground)]/80 hover:text-[var(--color-foreground)]'
                     )}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
                     <span
                       className={cn(
-                        'absolute -bottom-0.5 left-0 h-px bg-[var(--color-accent)] transition-all duration-300',
+                        'absolute -bottom-0.5 left-0 h-0.5 bg-[var(--color-accent)] transition-all duration-300 rounded-full',
                         isActive(link.href) ? 'w-full' : 'w-0 group-hover:w-full'
                       )}
                     />
@@ -119,37 +110,26 @@ export default function TransparentNavbar({
             <div className="flex items-center gap-4">
               <Link
                 to={ctaHref}
-                className={cn(
-                  'hidden md:inline-flex items-center px-5 py-2 text-label text-[0.65rem] transition-all duration-300',
-                  'border border-current',
-                  scrolled || !dark
-                    ? 'text-[var(--color-foreground)] hover:bg-[var(--color-foreground)] hover:text-[var(--color-background)]'
-                    : 'text-white hover:bg-white hover:text-[var(--color-foreground)]'
-                )}
+                className="hidden md:inline-flex items-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider bg-[var(--color-foreground)] text-white hover:bg-[var(--color-accent)] transition-all duration-300 rounded-none shadow-xs"
               >
                 {ctaLabel}
               </Link>
 
               <button
-                className={cn(
-                  'md:hidden p-2 rounded transition-colors',
-                  scrolled || !dark
-                    ? 'text-[var(--color-foreground)]'
-                    : 'text-white'
-                )}
+                className="md:hidden p-2 text-[var(--color-foreground)] hover:text-[var(--color-accent)] transition-colors cursor-pointer"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
               >
-                {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                {menuOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
             </div>
           </nav>
         </div>
       </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -170,12 +150,12 @@ export default function TransparentNavbar({
                 className="p-2 text-[var(--color-foreground)]"
                 aria-label="Close menu"
               >
-                <X size={22} />
+                <X size={24} />
               </button>
             </div>
 
             <nav className="flex-1 flex flex-col justify-center container-ami pb-20">
-              <ul className="space-y-2 list-none" role="list">
+              <ul className="space-y-3 list-none" role="list">
                 {links.map((link, i) => (
                   <motion.li
                     key={link.href}
@@ -186,7 +166,7 @@ export default function TransparentNavbar({
                     <Link
                       to={link.href}
                       className={cn(
-                        'font-serif text-3xl font-light block py-3 border-b border-[var(--color-border)] transition-colors',
+                        'font-sans text-2xl font-semibold block py-3 border-b border-[var(--color-border)] transition-colors',
                         isActive(link.href)
                           ? 'text-[var(--color-accent)]'
                           : 'text-[var(--color-foreground)]'
@@ -206,7 +186,7 @@ export default function TransparentNavbar({
               >
                 <Link
                   to={ctaHref}
-                  className="inline-block px-8 py-4 bg-[var(--color-foreground)] text-[var(--color-background)] text-label text-[0.7rem]"
+                  className="inline-block px-8 py-4 bg-[var(--color-foreground)] text-white text-xs font-semibold uppercase tracking-wider"
                 >
                   {ctaLabel}
                 </Link>

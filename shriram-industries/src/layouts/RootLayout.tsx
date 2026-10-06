@@ -11,7 +11,6 @@ import { siteConfig } from '@/config/site';
 
 export default function RootLayout() {
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   // Scroll to top on route change
   useEffect(() => {
@@ -26,7 +25,6 @@ export default function RootLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-background)]">
       <TransparentNavbar
-        dark={isHome}
         ctaLabel="Get a Quote"
         ctaHref="/contact"
       />
